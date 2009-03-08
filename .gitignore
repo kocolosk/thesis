@@ -1,0 +1,8 @@
+*.aux
+main.synctex.gz
+.main*
+main.lof
+main.log
+main.lot
+main.pdf
+main.toc
