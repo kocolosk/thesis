@@ -1,0 +1,78 @@
+\section{$A_{LL}$ Methodology}
+
+Let's start with the equation for a raw double spin asymmetry:
+
+\begin{equation}
+  A_{LL} = \frac{\sum_{runs} P_{Y}P_{B}(N_{++} - RN_{+-})}{\sum_{runs} P_{Y}^{2}P_{B}^{2}(N_{++} + RN_{+-})}
+\end{equation}
+%
+where R is a ratio of spin-dependent luminosities determined from the BBC scaler system:
+
+\begin{equation}
+  R = \frac{\mathcal{L}_{UU}+\mathcal{L}_{DD}}{\mathcal{L}_{DU}+\mathcal{L}_{UD}}
+\end{equation}
+%
+Each of the $\mathcal{L}_{ij}$ is a sum of the scaler counts from board 5 for
+timebins 7, 8, and 9 for events with a given spin state (in terms of 4 bit
+spin states, UU = 5, DU = 6, UD = 9, and DD = 10). The formula for the
+statistical uncertainty on $A_{LL}$ neglects uncertainties on the relative
+luminosities and beam polarizations. Assuming Poisson statistics on $N_{++}$
+and $N_{+-}$ we have for a single run
+
+\begin{equation}
+  \left(\frac{\sigma_{A_{LL}}}{A_{LL}}\right)^2 = \frac{N_{++} + R^2 N_{+-}}{(N_{++} - R N_{+-})^2} + \frac{N_{++} + R^2 N_{+-}}{(N_{++} + R N_{+-})^2} - 2\frac{N_{++} + R^2 N_{+-}}{N_{++}^2 - R^2 N_{+-}^2} \times COV(N_{++} - R N_{+-}, N_{++} + R N_{+-})
+\end{equation}
+%
+where the covariance term is just
+
+\begin{equation}
+  COV(N_{++} - R N_{+-},~N_{++} + R N_{+-}) = N_{++} - R^2 N_{+-}
+\end{equation}
+%
+In the case of small asymmetries, the relative uncertainty on the numerator
+dominates the uncertainty on $A_{LL}$:
+
+\begin{eqnarray}
+  \left(\frac{\sigma_{A_{LL}}}{A_{LL}}\right)^2 & = & \left(N_{++} + R^2 N_{+-}\right) \left[\frac{1}{(N_{++} - R N_{+-})^2} + \frac{1}{(N_{++} + R N_{+-})^2} - \frac{2(N_{++}-R^2 N_{+-})}{N_{++}^2 - R^2 N_{+-}^2} \right] \\
+  & \approx & \frac{N_{++} + R^2 N_{+-}}{(N_{++} - R N_{+-})^2}
+\end{eqnarray}
+%
+ROOT's TH1::Divide method does the error propagation correctly in this limit
+(it ignores the covariance), so we rely on it to calculate the results. The
+generalization to a sum over runs is straightforward since the yields for each
+run are uncorrelated.
+
+\subsection{Multi-Particle Statistics}
+
+In this analysis it's very often the case that we accept multiple pions from a single event.  Treating each of these particles as an independent event and simply using $\sqrt{N}$ for the errors as we did in the previous section is not quite correct.  Following the prescription in \href{http://www.star.bnl.gov/protected/spin/sowinski/analysis/derivations/multiParticle.pdf}{Jim's note on multi-particle statistics} we fill each bin in a histogram at most once per event, using a weight equal to the number of particles that fell into that bin.  Note that this approach does not account for correlations across bins.
+
+\subsection{Background Subtraction}
+
+Next we consider asymmetries with sideband subtraction. Specifically, the raw
+charged pion asymmetries in this analysis are contaminated by protons, kaons,
+and electrons. The protons and kaons are necessarily combined into a single
+sideband. Both sidebands have some non-negligible pion contribution. We start
+by defining a reduced background fraction that accounts for the impurities in
+the sideband:
+
+\begin{equation}
+  f_{x}(y) = \frac{x~counts~in~y~window}{total~in~y~window}
+\end{equation}
+
+\begin{equation}
+  f'(x) = \frac{f_{x}(\pi)}{1 - f_{\pi}(x)}
+\end{equation}
+%
+The standard equations for the background-subtracted $A_{LL}^{\pi}$ and its
+statistical uncertainty are only modified by replacing the background fraction
+for each sideband with its reduced background fraction:
+
+\begin{equation}
+  A_{LL}^{\pi} = \frac{ A_{LL}^{\pi,raw} - f'(p+K)A_{LL}^{p+K,raw} - f'(e)A_{LL}^{e,raw} }{1 - f'(p+K) - f'(e) }
+  \label{eqn:all}
+\end{equation}
+
+\begin{equation}
+  \sigma_{A_{LL}^{\pi}} = \frac{\sqrt{ \sigma_{A_{LL}^{raw}}^{2} + f'(p+K)^{2} * \sigma_{A_{LL}^{p+K,raw}}^{2} + f'(e)^{2} * \sigma_{A_{LL}^{e,raw}}^{2} }}{1 - f'(p+K) - f'(e)}
+  \label{eqn:sigma-all}
+\end{equation}
