@@ -20,19 +20,39 @@
 \usepackage{lgrind}
 \pagestyle{plain}
 
+%% in case I include .eps versions of all figures for those w/o pdftex
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+
+\usepackage{amsmath,amssymb,amsfonts} % easily align arrays of equations
+\usepackage{hyperref} % hyperlinks
+\usepackage{subfigure} % multi-part figures
+\usepackage{pdfpages} % makes it easy to insert all those nsigmapi fits
+
+% Feynman diagrams
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
 \begin{document}
 
 \include{cover}
 \pagestyle{plain}
 \include{contents}
-\include{chap1-introduction/main}
-\include{chap2-experiment/main}
-\include{chap3-analysis/main}
-\include{chap4-results/main}
-\include{chap5-conclusions/main}
+\begin{fmffile}{feynman-diagrams}
+\include{ch1-theory}
+\include{ch2-experiment}
+\include{ch3-reconstruction}
+\include{ch4-analysis}
+\include{ch5-results}
+\include{ch6-conclusions}
+\end{fmffile}
 \appendix
-\include{appa}
-\include{appb}
+% \include{appendices/appa}
+% \include{appendices/appb}
 \include{biblio}
 \end{document}
 

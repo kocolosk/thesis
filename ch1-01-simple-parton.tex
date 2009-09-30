@@ -11,30 +11,23 @@ at high energies they did not depend on the $Q^2$ of the interaction. This
 result stood in sharp contrast to the power-law behavior of the proton's elastic
 form factors, and implied the existence of point-like constituents inside the
 proton. These ``partons'' were conceived as effectively massless,
-electromagnetically charged particles; in the ``deep-inelastic scattering''
+electromagnetically charged particles; in the deep-inelastic scattering
 (DIS) regime, a virtual photon interacts with a parton, not the proton as a
 whole.
 
-Bjorken's $F_1$ structure function can be expressed in terms of the number densities $q(x)$ of quarks and $\bar q(x)$ of antiquarks as
+Scaling is manifest when Bjorken's $F_1$ structure function is expressed in terms of the number densities $q(x)$ of quarks and $\bar q(x)$ of antiquarks as
 %
 \begin{equation}
-  F_1(x) = \frac{1}{2}\sum_{j}{e_j^2[q_j(x) + \bar{q}_j(x)]}
+  F_1(x, Q^2) = \frac{1}{2}\sum_{j}{e_j^2[q_j(x) + \bar{q}_j(x)]}
 \end{equation}
 %
-where the sum is taken over quark flavors $j$ and $e_j$ is the electromagnetic charge of flavor $j$.  The analogous formula for polarized DIS reads
+where the sum is taken over quark flavors $j$ and $e_j$ is the electromagnetic charge of flavor $j$.  In longitudinally polarized DIS we define a polarization density $\Delta  q(x) \equiv q_+(x) - q_-(x)$ as the difference in number density between quarks whose spins are aligned with the (longitudinal) spin of the proton and quarks whose spins are anti-aligned; the polarized analogue to $F_1$ is then
 %
 \begin{equation}
-  g_1(x) = \frac{1}{2}\sum_{j}{e_j^2[\Delta q_j(x) + \Delta \bar{q}_j(x)]}
-\end{equation}
-%
-where $\Delta q(x)$ is the difference in densities between quarks whose spins are aligned with the (longitudinal) spin of the proton and quarks whose spins are anti-aligned:
-\begin{equation}
-  \Delta  q(x) = q_+(x) - q_-(x)
+  g_1(x, Q^2) = \frac{1}{2}\sum_{j}{e_j^2[\Delta q_j(x) + \Delta \bar{q}_j(x)]}.
 \end{equation}
 
-% really should mention Bjorken's sum rule in here somewhere, since its definitely true and not model dependent
-
-It is useful to rewrite the expression for $g_1$ in terms of quantities which have specific $SU(3)_F$ transformation properties:
+In the naive parton model we assume $SU(3)_F$ flavor symmetry and thus it is useful to rewrite the expression for $g_1$ in terms of quantities which have specific $SU(3)_F$ transformation properties:
 %
 \begin{equation}
   g_1(x) = \frac{1}{9}[\frac{3}{4}\Delta q_3(x) + \frac{1}{4}\Delta q_8(x) + \Delta \Sigma(x)]
@@ -49,7 +42,7 @@ where
   \label{eqn:su3_dis}
 \end{eqnarray}
 %
-The first moments of these quantities are the hadronic matrix elements of an octet of quark $SU(3)_F$ axial-vector currents $J_{5\mu}^i$ and a flavor singlet singlet axial current $J_{5\mu}^0$ (NB: this conclusion is only valid if one includes the elastic contribution at x=1, but in DIS that contribution is negligible).  The octet is the same one that controls the weak decays of the neutron and octet hyperons, which implies that two of the moments are known from $\beta$-decay measurements:
+The first moments of these quantities are the hadronic matrix elements of an octet of quark $SU(3)_F$ axial-vector currents $J_{5\mu}^i$ and a flavor singlet singlet axial current $J_{5\mu}^0$.  In the limit of massless partons the non-singlet currents are conserved quantities, and are known from $\beta$-decay measurements:
 %
 \begin{eqnarray}
   a_3 & = & \int_0^1 dx~\Delta q_3(x) = g_A = 1.2670 \pm 0.0035 \nonumber \\
@@ -65,9 +58,9 @@ A measurement of the first moment of $g_1^p$ could thus be interpreted as a meas
 %
 If one assumes that the sea quark distribution is either unpolarized or CP-symmetric and thus does not contribute to the spin of the proton, Equation \ref{eqn:a_0_prediction} becomes a \textit{prediction} for $\langle S_z \rangle$, as noted by Ellis and Jaffe \cite{Ellis:1973kp} in 1974.
 
-[Should say something about the Sehgal result \cite{Sehgal:1974rz} that concludes the quark contribution to the spin of the proton is $\sim$ 0.3, in agreement with Ellis-Jaffe but using a slightly different derivation (Bjorken sum rule \cite{Bjorken:1966jh}, equivalent parton model result (cites several people), use SU(3) symmetry to obtain same result for $\Xi^- (dss) \rightarrow \Xi^0 (uss) + e + \bar \nu_e$, expresses $\frac{G_A}{G_V}$ ratios in terms of experimentally-measurable quantities $F$ and $D$ (calls that step the octet-model results), seems that $F+D = \frac{G_A}{G_V} \approx g_A = a_3$, F/D = $a_8$).]
+% Should say something about the Sehgal result \cite{Sehgal:1974rz} that concludes the quark contribution to the spin of the proton is $\sim$ 0.3, in agreement with Ellis-Jaffe but using a slightly different derivation (Bjorken sum rule \cite{Bjorken:1966jh}, equivalent parton model result (cites several people), use SU(3) symmetry to obtain same result for $\Xi^- (dss) \rightarrow \Xi^0 (uss) + e + \bar \nu_e$, expresses $\frac{G_A}{G_V}$ ratios in terms of experimentally-measurable quantities $F$ and $D$ (calls that step the octet-model results), seems that $F+D = \frac{G_A}{G_V} \approx g_A = a_3$, F/D 
 
-[In much of the literature I see $g_A$ instead of Griffiths' $\frac{G_A}{G_V}$.  I wonder if that is a definition, or if the literature just takes the Conserved Vector Current hypothesis $G_V = 1$ for granted?]
+% In much of the literature I see $g_A$ instead of Griffiths' $\frac{G_A}{G_V}$.  I wonder if that is a definition, or if the literature just takes the Conserved Vector Current hypothesis $G_V = 1$ for granted? -- yes, it's the latter, see Stiegler 1995
 
 % \begin{equation}
 %   \Gamma_1^p \equiv \int_0^1 dx~g_1(x) = \frac{1}{9}[\frac{3}{4}a_3 + \frac{1}{4}a_8 + a_0]
@@ -78,3 +71,8 @@ If one assumes that the sea quark distribution is either unpolarized or CP-symme
 %   a_8 & = & 0.585 \pm 0.025
 % \end{eqnarray*}
 
+% really should mention Bjorken's sum rule in here somewhere, since its definitely true and not model dependent
+% Bjorken sum rule -- what do I need to say about it?
+% \begin{equation}
+%   \int_0^1 dx~g_1^p(x,Q^2) - g_1^n(x,Q^2) = \frac{g_A}{6}(1 + O(\alpha_s))
+% \end{equation}
