@@ -1,58 +1,54 @@
 \section{$A_{LL}$ Methodology}
 
-Let's start with the equation for a raw double spin asymmetry:
-
+We begin with the equation for a double spin asymmetry,
+%
 \begin{equation}
-  A_{LL} = \frac{\sum_{runs} P_{Y}P_{B}(N_{++} - RN_{+-})}{\sum_{runs} P_{Y}^{2}P_{B}^{2}(N_{++} + RN_{+-})}
+  A_{LL} = \frac{\sum_{runs} P_{Y}P_{B}\left[(N_{uu} + N_{dd}) - R(N_{ud} + N_{du})\right]}{\sum_{runs} P_{Y}^{2}P_{B}^{2}\left[(N_{uu} + N_{dd}) + R(N_{ud} + N_{du})\right]}.
 \end{equation}
 %
-where R is a ratio of spin-dependent luminosities determined from the BBC scaler system:
+Henceforth we employ parity conservation; the \(++\) subscript denotes a sum
+over the \(uu\) and \(dd\) states and the \(+-\) subscript a sum over \(ud\)
+and \(du\) states. \(P_Y\) and \(P_B\) are the Yellow and Blue beam
+polarizations, \(N_{ij}\) are spin-dependent charged pion yields, and \(R =
+\frac{\mathcal{L}_{++}}{\mathcal{L}_{+-}}\) is a ratio of sampled luminosities
+in different spin configurations. Each of the $\mathcal{L}_{ij}$ is a sum of
+the scaler counts from board 5 over bunch crossings with that spin state. The
+sum is restricted to a set of timebins chosen to approximate a 60~cm cut on
+the $z$ position of the vertex; in the 2005 analysis timebins 7, 8, and 9 were
+selected, while the 2006 analysis added timebin 6 into the sum.
 
+The formula for the statistical uncertainty on \(A_{LL}\) neglects
+uncertainties on the relative luminosities and beam polarizations. Assuming
+Poisson statistics on \(N_{++}\) and \(N_{+-}\) the uncertainty on the
+asymmetry for a single run is
+%
 \begin{equation}
-  R = \frac{\mathcal{L}_{UU}+\mathcal{L}_{DD}}{\mathcal{L}_{DU}+\mathcal{L}_{UD}}
+  \left(\frac{\sigma_{A_{LL}}}{A_{LL}}\right)^2 = \left(N_{++} + R^2 N_{+-}\right)\left[\frac{1}{N^2} + \frac{1}{D^2} - \frac{2 \times COV(N,D)}{ND} \right]
 \end{equation}
 %
-Each of the $\mathcal{L}_{ij}$ is a sum of the scaler counts from board 5 for
-timebins 7, 8, and 9 for events with a given spin state (in terms of 4 bit
-spin states, UU = 5, DU = 6, UD = 9, and DD = 10). The formula for the
-statistical uncertainty on $A_{LL}$ neglects uncertainties on the relative
-luminosities and beam polarizations. Assuming Poisson statistics on $N_{++}$
-and $N_{+-}$ we have for a single run
-
-\begin{equation}
-  \left(\frac{\sigma_{A_{LL}}}{A_{LL}}\right)^2 = \frac{N_{++} + R^2 N_{+-}}{(N_{++} - R N_{+-})^2} + \frac{N_{++} + R^2 N_{+-}}{(N_{++} + R N_{+-})^2} - 2\frac{N_{++} + R^2 N_{+-}}{N_{++}^2 - R^2 N_{+-}^2} \times COV(N_{++} - R N_{+-}, N_{++} + R N_{+-})
-\end{equation}
+where \(N\) and \(D\) are the numerator and denominator of the raw asymmetry
+(that is, neglecting polarizations), and \(COV(N,D) = N_{++} - R^2 N_{+-}\).
+In the case of small asymmetries (\(\frac{1}{N^2} \gg \frac{1}{D^2} - \frac{2
+COV(N,D)}{ND}\)), the uncertainty on the numerator dominates the uncertainty
+on \(A_{LL}\):
 %
-where the covariance term is just
-
 \begin{equation}
-  COV(N_{++} - R N_{+-},~N_{++} + R N_{+-}) = N_{++} - R^2 N_{+-}
+  \left(\frac{\sigma_{A_{LL}}}{A_{LL}}\right)^2 \approx \frac{N_{++} + R^2 N_{+-}}{N^2}
 \end{equation}
-%
-In the case of small asymmetries, the relative uncertainty on the numerator
-dominates the uncertainty on $A_{LL}$:
-
-\begin{eqnarray}
-  \left(\frac{\sigma_{A_{LL}}}{A_{LL}}\right)^2 & = & \left(N_{++} + R^2 N_{+-}\right) \left[\frac{1}{(N_{++} - R N_{+-})^2} + \frac{1}{(N_{++} + R N_{+-})^2} - \frac{2(N_{++}-R^2 N_{+-})}{N_{++}^2 - R^2 N_{+-}^2} \right] \\
-  & \approx & \frac{N_{++} + R^2 N_{+-}}{(N_{++} - R N_{+-})^2}
-\end{eqnarray}
 %
 ROOT's TH1::Divide method does the error propagation correctly in this limit
-(it ignores the covariance), so we rely on it to calculate the results. The
-generalization to a sum over runs is straightforward since the yields for each
-run are uncorrelated.
+(it ignores the covariance term). The generalization to a sum over runs is
+straightforward since the yields for each run are uncorrelated.
 
 \subsection{Multi-Particle Statistics}
 
-In this analysis it's very often the case that we accept multiple pions from a
-single event. Treating each of these particles as an independent event and
-simply using $\sqrt{N}$ for the errors as we did in the previous section is
-not quite correct. Following the prescription in
-\href{http://www.star.bnl.gov/protected/spin/sowinski/analysis/derivations/multiParticle.pdf}{Jim's
-note on multi-particle statistics} we fill each bin in a histogram at most
-once per event, using a weight equal to the number of particles that fell into
-that bin. Note that this approach does not account for correlations across
-bins.
+This analysis often accepts multiple pions from a single event. Treating each
+of these particles as an independent event and na\"ively using
+$\sqrt{N_{pions}}$ for the errors as in the previous section is not correct.
+Following the prescription in \cite{sowinski-multiparticle-statistics} we fill
+each bin in a histogram at most once per event, using a weight equal to the
+number of particles that fell into the bin. This technique neglects
+correlations across bins.
 
 \subsection{Background Subtraction}
 
@@ -63,13 +59,13 @@ sideband. Both sidebands have some non-negligible pion contribution. We start
 by defining a reduced background fraction that accounts for the impurities in
 the sideband:
 
-\begin{equation}
-  f_{x}(y) = \frac{x~counts~in~y~window}{total~in~y~window}
-\end{equation}
+\begin{equation*}
+  f_{x}(y) = \frac{x~\mathrm{counts~in}~y~\mathrm{window}}{\mathrm{total~ in}~y~\mathrm{window}}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
   f'(x) = \frac{f_{x}(\pi)}{1 - f_{\pi}(x)}
-\end{equation}
+\end{equation*}
 %
 The standard equations for the background-subtracted $A_{LL}^{\pi}$ and its
 statistical uncertainty are only modified by replacing the background fraction
