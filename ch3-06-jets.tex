@@ -2,15 +2,73 @@
 
 \subsection{Clustering Algorithm}
 
-STAR has implemented the midpoint-cone algorithm in accordance with the recommendations of Reference \cite{Blazey:2000qt}.  The algorithm proceeds by assembling a $p_{T}$ ordered list of four momenta (``protojets") for each event.  Each protojet with $p_T>p_{T}^{seed}$ (``seeds") initiates a clustering sequence.  For each clustering sequence, protojets within an angular distance $\Delta r = \sqrt{\Delta\phi^{2} + \Delta\eta ^{2}} < r_{cone}$ are selected and their four momenta are added to define the four momentum of the cluster via $p_{\mu}^{cluster} = \sum p_{\mu}^{i}$.  If $p_{\mu}^{cluster}$ lies within a distance $\epsilon$ of the initiating protojet, the clustering sequence terminates.  Otherwise the clustering sequence is iterated about the direction $p_{\mu}^{cluster}$ until convergence is reached.  Once stable configurations are identified, the association is cataloged for later use.  However, no protojets are removed from the sample.  Clustering continues until the list of seeds is exhausted, yielding a list of redundant, overlapping, stable clusters.  Before disentangling the stable clusters, the algorithm first tests for missed initiating directions by constructing a set of test seed directions at the ``midpoint" between all possible pairs of neighboring clusters.  Specifically, locations at the midpoint of all cluster pairs separated by distance $d < 2 \times r_{cone}$ are tested for stable cluster configurations.  Clusters formed around midpoint seeds are only retained if the resulting cluster lies within $\epsilon$ of the midpoint seed, and no iteration is performed.  
+STAR has implemented the midpoint-cone algorithm in accordance with the
+recommendations of Reference \cite{Blazey:2000qt}. The algorithm proceeds by
+assembling a $p_{T}$ ordered list of four momenta (``protojets") for each
+event. Each protojet with $p_T>p_{T}^{seed}$ (``seeds") initiates a clustering
+sequence. For each clustering sequence, protojets within an angular distance
+$\Delta r = \sqrt{\Delta\phi^{2} + \Delta\eta ^{2}} < r_{cone}$ are selected
+and their four momenta are added to define the four momentum of the cluster
+via $p_{\mu}^{cluster} = \sum p_{\mu}^{i}$. If $p_{\mu}^{cluster}$ lies within
+a distance $\epsilon$ of the initiating protojet, the clustering sequence
+terminates. Otherwise the clustering sequence is iterated about the direction
+$p_{\mu}^{cluster}$ until convergence is reached. Once stable configurations
+are identified, the association is cataloged for later use. However, no
+protojets are removed from the sample. Clustering continues until the list of
+seeds is exhausted, yielding a list of redundant, overlapping, stable
+clusters. Before disentangling the stable clusters, the algorithm first tests
+for missed initiating directions by constructing a set of test seed directions
+at the ``midpoint" between all possible pairs of neighboring clusters.
+Specifically, locations at the midpoint of all cluster pairs separated by
+distance $d < 2 \times r_{cone}$ are tested for stable cluster configurations.
+Clusters formed around midpoint seeds are only retained if the resulting
+cluster lies within $\epsilon$ of the midpoint seed, and no iteration is
+performed.
 
-After all midpoint seeds have been tested, the resulting list of stable clusters is disentangled via a splitting/merging algorithm.  The algorithm proceeds by  finding the highest $p_{T}$ cluster, referred to as the ``root" cluster.  Next, all clusters sharing protojets with the root cluster ("neighbors") are identified, and the neighbor with the largest $p_T$ is selected.  The root and neighbor jet are merged if $\frac{p_{T}^{shared}}{p_{T}^{neighbor}}>f_{split-merge}$ where $0 < f_{split-merge} < 1$.  If this condition is not satisfied the clusters are split such that each protojet is assigned to the closest of the two overlapping clusters.  After each split/merge, the cluster list is again sorted by $p_T$, a new root cluster is chosen, and the splitting/merging continues until no protojets are shared amongst clusters.  It is important to note that the split/merge step takes a  list of clusters that are essentially circular, while the final clusters are no longer necessarily circular.   Finally, each of the unique clusters is tagged as a ``jet", whose four momentum is the vector sum of the constituent protojets.
+After all midpoint seeds have been tested, the resulting list of stable
+clusters is disentangled via a splitting/merging algorithm. The algorithm
+proceeds by finding the highest $p_{T}$ cluster, referred to as the ``root"
+cluster. Next, all clusters sharing protojets with the root cluster
+("neighbors") are identified, and the neighbor with the largest $p_T$ is
+selected. The root and neighbor jet are merged if
+$\frac{p_{T}^{shared}}{p_{T}^{neighbor}}>f_{split-merge}$ where $0 <
+f_{split-merge} < 1$. If this condition is not satisfied the clusters are
+split such that each protojet is assigned to the closest of the two
+overlapping clusters. After each split/merge, the cluster list is again sorted
+by $p_T$, a new root cluster is chosen, and the splitting/merging continues
+until no protojets are shared amongst clusters. It is important to note that
+the split/merge step takes a list of clusters that are essentially circular,
+while the final clusters are no longer necessarily circular. Finally, each of
+the unique clusters is tagged as a ``jet", whose four momentum is the vector
+sum of the constituent protojets.
 
 \subsection{Application at STAR}
 
-STAR applies the midpoint-cone algorithm to cluster charged particle tracks and BEMC tower energies as follows.  Charged particle protojets are constructed from all primary TPC tracks satisfying the aforementioned cuts.  A charged pion mass is assumed when relating energy and momentum.  Each BEMC tower energy measurement is corrected for charged particle energy deposition by i) identifying the number of TPC tracks projecting to the tower and ii) subtracting the most probable MIP energy deposition for each of the projecting tracks.  After MIP subtraction, each tower energy measurement is converted to a four momentum using knowledge of the highest-ranking primary vertex location and assuming a photon mass.  Protojets are then constructed for towers with corrected $E_{T}>0.2 $GeV.   
+STAR applies the midpoint-cone algorithm to cluster charged particle tracks
+and BEMC tower energies as follows. Charged particle protojets are constructed
+from all primary TPC tracks satisfying the aforementioned cuts. A charged pion
+mass is assumed when relating energy and momentum. Each BEMC tower energy
+measurement is corrected for charged particle energy deposition by i)
+identifying the number of TPC tracks projecting to the tower and ii)
+subtracting the most probable MIP energy deposition for each of the projecting
+tracks. After MIP subtraction, each tower energy measurement is converted to a
+four momentum using knowledge of the highest-ranking primary vertex location
+and assuming a photon mass. Protojets are then constructed for towers with
+corrected $E_{T}>0.2 $GeV.
 
-The midpoint-cone algorithm first sorts the protojets onto a grid of $\Delta\eta=\Delta\phi=0.05$, where the properties of each grid ``cell" are defined by the vector sum of its constituent protojets.  This discretization  improves computational efficiency and minimizes potential biases arising from the fact that the BEMC towers may measure energy from more than one particle.   Each cell maintains a list of its constituent protojets so that there is no ultimate loss of information.  The midpoint cone algorithm then operates on the list of cells, and after clustering and splitting/merging conclude, each cluster is then characterized by the vector sum of its constituent four momenta.  Jets with $p_{T}<5$ GeV/$c$ are discarded.  The control parameters of the clustering algorithm are listed in Table \ref{tbl:jetfinding-parameters}.  The restricted cone radius in the 2005 analysis was motivated by the limited pseudorapidity acceptance of the partially installed BEMC.
+The midpoint-cone algorithm first sorts the protojets onto a grid of
+$\Delta\eta=\Delta\phi=0.05$, where the properties of each grid ``cell" are
+defined by the vector sum of its constituent protojets. This discretization
+improves computational efficiency and minimizes potential biases arising from
+the fact that the BEMC towers may measure energy from more than one particle.
+Each cell maintains a list of its constituent protojets so that there is no
+ultimate loss of information. The midpoint cone algorithm then operates on the
+list of cells, and after clustering and splitting/merging conclude, each
+cluster is then characterized by the vector sum of its constituent four
+momenta. Jets with $p_{T}<5$ GeV/$c$ are discarded. The control parameters of
+the clustering algorithm are listed in Table \ref{tbl:jetfinding-parameters}.
+The restricted cone radius in the 2005 analysis was motivated by the limited
+pseudorapidity acceptance of the partially installed BEMC.
 
 \begin{table}
   \begin{center}

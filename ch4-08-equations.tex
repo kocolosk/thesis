@@ -44,7 +44,15 @@ run are uncorrelated.
 
 \subsection{Multi-Particle Statistics}
 
-In this analysis it's very often the case that we accept multiple pions from a single event.  Treating each of these particles as an independent event and simply using $\sqrt{N}$ for the errors as we did in the previous section is not quite correct.  Following the prescription in \href{http://www.star.bnl.gov/protected/spin/sowinski/analysis/derivations/multiParticle.pdf}{Jim's note on multi-particle statistics} we fill each bin in a histogram at most once per event, using a weight equal to the number of particles that fell into that bin.  Note that this approach does not account for correlations across bins.
+In this analysis it's very often the case that we accept multiple pions from a
+single event. Treating each of these particles as an independent event and
+simply using $\sqrt{N}$ for the errors as we did in the previous section is
+not quite correct. Following the prescription in
+\href{http://www.star.bnl.gov/protected/spin/sowinski/analysis/derivations/multiParticle.pdf}{Jim's
+note on multi-particle statistics} we fill each bin in a histogram at most
+once per event, using a weight equal to the number of particles that fell into
+that bin. Note that this approach does not account for correlations across
+bins.
 
 \subsection{Background Subtraction}
 
