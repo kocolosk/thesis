@@ -184,20 +184,21 @@ multiple collision types. A schematic of the detector is shown in Figure
 to 45 minutes duration, in which several hundred thousand events will be
 recorded. If a problem is discovered with a run during acquisition,
 reconstruction, or analysis, that run can be cleanly discarded without the
-loss of a large number of good events. Four STAR subsystems are of particular
-interest in this work: the Beam-Beam Counters (BBCs), Barrel Electromagnetic
-Calorimeter (BEMC), Endcap Electromagnetic Calorimeter (EEMC), and STAR's
-flagship subsystem, the Time Projection Chamber (TPC). The BBCs and BEMC
-identify interesting events online and trigger the detector to read them out,
-while the BEMC, EEMC and TPC are used to reconstruct the final state of the
-event offline. The BBCs also allow a bunch crossing-dependent measure of the
-beam luminosities, which is essential to normalize spin-dependent asymmetries.
-These and other subsystems are described in greater detail in
-\cite{RHIC-Special-Issue}.
+loss of a large number of good events. Five STAR subsystems are of interest in
+this work: the Beam-Beam Counters (BBCs), Zero Degree Calorimeters (ZDCs),
+Barrel Electromagnetic Calorimeter (BEMC), Endcap Electromagnetic Calorimeter
+(EEMC), and STAR's flagship subsystem, the Time Projection Chamber (TPC). The
+BBCs and BEMC identify interesting events online and trigger the detector to
+read them out, while the BEMC, EEMC and TPC are used to reconstruct the final
+state of the event offline. The BBCs and ZDCs also allow a bunch
+crossing-dependent measure of the beam luminosities, which is essential to
+normalize spin-dependent asymmetries. These and other subsystems are described
+in greater detail in \cite{RHIC-Special-Issue}.
 
 \begin{figure}
   \includegraphics[width=1.0\textwidth]{figures/star-schematic}
-  \caption{Schematic overview of the STAR detector, identifying many of the detector subsystems and defining the STAR coordinate system.}
+  \caption{Schematic overview of the STAR detector, identifying many of the
+  detector subsystems and defining the STAR coordinate system.}
   \label{fig:star-schematic}
 \end{figure}
 
@@ -233,7 +234,7 @@ monitoring tool in the STAR control room.
 
 \subsection{Beam Beam Counters}
 
-The BBCs \cite{Kiryluk:2005gg} are segmented scintillator annuli situated
+The BBCs \cite{Kiryluk:2003aw} are segmented scintillator annuli situated
 $\pm$ 3.5 meters along the beam line from the center of STAR. They are
 sensitive to charged particles in the pseudorapidity range $3.3 < |\eta| <
 5.0$, where pseudorapidity is defined in terms of the angle between the
@@ -244,11 +245,25 @@ collisions at STAR; most trigger algorithms use the MB condition as a base on
 which to apply more selective criteria.
 
 In addition to defining the MB trigger condition, coincident signals in the
-BBCs can also serve as a luminosity monitor. In particular, tracking the
+BBCs also serve as a luminosity monitor. In particular, tracking the
 number of BBCs coincidences per bunch crossing allows one to measure the
 luminosities for each combination of the spin states of the two beams. The
 ratios of these luminosities are a crucial element in the extraction of
 single- and double-spin physics asymmetries at RHIC.
+
+\subsection{Zero Degree Calorimeters}
+
+The ZDCs \cite{Adler:2003sp} are hadron calorimeters placed 18~m upstream on
+each side of the the STAR interaction point. This places them on a line with
+the colliding beams but outside the final bending magnets between the two beam
+lines. They are 6 hadronic interaction lengths in depth but only 10~cm wide
+extending $\pm$2.7~mrad from the beam. As with the BBCs, a hit is recorded
+based on a coincidence between the two ZDCs with timing consistent with
+particles arriving simultaneously from the interaction point. These devices
+are designed to be sensitive to neutrons from heavy ion reactions and thus are
+not used as trigger detectors in the pp program. They do serve as a secondary
+luminosity monitor useful for many systematic error checks. They typically
+count a factor of 100 less than the BBC.
 
 \subsection{Electromagnetic Calorimeters}
 
