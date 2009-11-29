@@ -234,22 +234,36 @@ monitoring tool in the STAR control room.
 
 \subsection{Beam Beam Counters}
 
-The BBCs \cite{Kiryluk:2003aw} are segmented scintillator annuli situated
-$\pm$ 3.5 meters along the beam line from the center of STAR. They are
-sensitive to charged particles in the pseudorapidity range $3.3 < |\eta| <
-5.0$, where pseudorapidity is defined in terms of the angle between the
-particle momentum and the beam momentum as $\eta \equiv
--\mathrm{ln}\left(\mathrm{tan} \frac{\theta}{2}\right)$. Coincident signals in
-both BBCs define the minimum-bias (MB) trigger condition for proton-proton
-collisions at STAR; most trigger algorithms use the MB condition as a base on
-which to apply more selective criteria.
+The BBCs \cite{Kiryluk:2003aw} consist of two hexagonal scintillator arrays,
+one immediately outside each magnet poletip 3.7~m from the interaction point.
+Each array is tiled from 36 individual hexagonal scintillators read out by
+wave length shifting fiber and a photomultiplier tube. The beam pipe passes
+through the center of the array. The region 9.6~cm to 48~cm from the beam axis
+($3.3 < |\eta| < 5.0$) is covered by 18 small hexagonal tiles. The remaining
+region out to 193~cm from the beam pipe ($2.1 < |\eta| < 3.3$) is covered by
+18 large hexagonal tiles. Only the small tiles are used in this analysis.
+Thresholds are set well below the signal deposited by a single ionizing
+particle in a tile, and a bunch crossing is recorded as having a hit based on
+the relative timing between the first signal from any of the small tiles on
+one side with the first signal from any of the small tiles on the other. The
+timing resolution is $\sim$1~ns, sufficient to separate beam backgrounds which
+should hit the two counters in succession vs. particles from a collision which
+should result in both counters being struck simultaneously. A timing cut 8~ns
+wide selects only coincidences with collision timing, and individual scalers
+are kept for each timing bin in addition to the total in the timing gate, thus
+allowing for more selective cuts offline.
 
 In addition to defining the MB trigger condition, coincident signals in the
-BBCs also serve as a luminosity monitor. In particular, tracking the
-number of BBCs coincidences per bunch crossing allows one to measure the
-luminosities for each combination of the spin states of the two beams. The
-ratios of these luminosities are a crucial element in the extraction of
-single- and double-spin physics asymmetries at RHIC.
+BBCs also serve as a luminosity monitor. In particular, tracking the number of
+BBCs hits per bunch crossing allows one to measure the luminosities for each
+combination of the spin states of the two beams. The ratios of these
+luminosities are a crucial element in the extraction of single- and
+double-spin physics asymmetries at RHIC. The absolute luminosity seen by the
+BBCs is calibrated by measuring the size of the beams and the number of
+colliding protons. The coincident cross section was found to be 26.1 $\pm$
+1.8(stat) $\pm$ 1.8(syst)~mb, representing $87\pm8\%$ of the non-singly
+diffractive pp cross section \cite{Adams:2003kv}. This translates into a
+typical BBC coincidence rate for 2005(2006) data of $\sim$180(??)~kHz.
 
 \subsection{Zero Degree Calorimeters}
 
