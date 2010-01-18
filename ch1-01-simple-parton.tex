@@ -34,61 +34,32 @@ analogue to $F_1$ is then
   g_1(x, Q^2) = \frac{1}{2}\sum_{j}{e_j^2[\Delta q_j(x) + \Delta \bar{q}_j(x)]}.
 \end{equation}
 
-In the na\"ive parton model we assume $SU(3)_F$ flavor symmetry and thus it is
-useful to rewrite the expression for $g_1$ in terms of quantities which have
-specific $SU(3)_F$ transformation properties:
+In the na\"ive parton model one assumes \(SU(3)_F\) flavor symmetry and thus it is useful to express the integral of \(g_1\) in terms of quantities which have specific \(SU(3)_F\) transformation properties:
 %
 \begin{equation}
-  g_1(x) = \frac{1}{9}[\frac{3}{4}\Delta q_3(x) + \frac{1}{4}\Delta q_8(x) + \Delta \Sigma(x)]
+  \Gamma_1^p = \int_0^1 dx~g_1^p(x) = \frac{1}{9}\left[a_0 + \frac{3}{4}a_3 + \frac{1}{4}a_8\right].
   \label{eqn:g1}
 \end{equation}
 %
-where
+The \(a_j\) are the hadronic matrix elements of an octet of quark $SU(3)_F$
+axial-vector currents $J_{5\mu}^i$ and a flavor singlet axial current
+$J_{5\mu}^0$, and are related to the polarized quark densities in the proton as
 %
 \begin{eqnarray}
-  \Delta q_3(x) & = & (\Delta u + \Delta \bar{u})_x - (\Delta d + \Delta \bar{d})_x \nonumber \\
-  \Delta q_8(x) & = & (\Delta u + \Delta \bar{u})_x + (\Delta d + \Delta \bar{d})_x - 2(\Delta s + \Delta \bar{s})_x \nonumber \\
-  \Delta \Sigma(x) & = & (\Delta u + \Delta \bar{u})_x + (\Delta d + \Delta \bar{d})_x + (\Delta s + \Delta \bar{s})_x
-  \label{eqn:su3_dis}
+  a_0 & = & (\Delta u + \Delta \bar{u}) + (\Delta d + \Delta \bar{d}) + (\Delta s + \Delta \bar{s}) \nonumber \\
+  a_3 & = & (\Delta u + \Delta \bar{u}) - (\Delta d + \Delta \bar{d}) \nonumber \\
+  a_8 & = & (\Delta u + \Delta \bar{u}) + (\Delta d + \Delta \bar{d}) - 2(\Delta s + \Delta \bar{s})
+  \label{eqn:su3-dis}
 \end{eqnarray}
 %
-The first moments of these quantities are the hadronic matrix elements of an
-octet of quark $SU(3)_F$ axial-vector currents $J_{5\mu}^i$ and a flavor
-singlet axial current $J_{5\mu}^0$. In the limit of massless partons
-the non-singlet currents are scale-independent quantities, and are known from
-$\beta$-decay measurements \cite{}:
+In the limit of massless partons the non-singlet currents are scale-independent quantities, and are known from $\beta$-decay measurements
+\cite{}:
 %
 \begin{eqnarray}
-  a_3 & = & \int_0^1 dx~\Delta q_3(x) = g_A = 1.2670 \pm 0.0035 \nonumber \\
-  a_8 & = & \int_0^1 dx~\Delta q_8(x) = 0.585 \pm 0.025
+  a_3 & = & g_A = F+D = 1.2670 \pm 0.0035 \nonumber \\
+  a_8 & = & 3F-D = 0.585 \pm 0.025.
   \label{eqn:beta-decay}
-\end{eqnarray} % might be missing a 1/\sqrt{3} in a_8
+\end{eqnarray}
 %
-A measurement of the first moment of $g_1^p$ could thus be interpreted as a
-measurement of the singlet current $a_0 = \int_0^1 dx~\Delta \Sigma (x)$, and
-in turn as a measurement of the quark spin contribution to the spin of the
-proton. We rearrange \ref{eqn:su3_dis} to yield an expression for the singlet
-current in terms of $a_8$ and the polarized strange quark densities:
-%
-\begin{equation}
-  \Delta \Sigma = a_8 + 3 \int_0^1 dx~(\Delta s + \Delta \bar s)
-  \label{eqn:a_0_prediction}
-\end{equation}
-%
-If one assumes that the sea quark distribution is either unpolarized or
-CP-symmetric and thus does not contribute to the spin of the proton, Equation
-\ref{eqn:a_0_prediction} becomes a \textit{prediction} for $\langle S_z
-\rangle$, as noted by Ellis and Jaffe \cite{Ellis:1973kp} in 1974.
-
-% Should say something about the Sehgal result \cite{Sehgal:1974rz} that concludes the quark contribution to the spin of the proton is $\sim$ 0.3, in agreement with Ellis-Jaffe but using a slightly different derivation (Bjorken sum rule \cite{Bjorken:1966jh}, equivalent parton model result (cites several people), use SU(3) symmetry to obtain same result for $\Xi^- (dss) \rightarrow \Xi^0 (uss) + e + \bar \nu_e$, expresses $\frac{G_A}{G_V}$ ratios in terms of experimentally-measurable quantities $F$ and $D$ (calls that step the octet-model results), seems that $F+D = \frac{G_A}{G_V} \approx g_A = a_3$, F/D 
-
-% In much of the literature I see $g_A$ instead of Griffiths' $\frac{G_A}{G_V}$.  I wonder if that is a definition, or if the literature just takes the Conserved Vector Current hypothesis $G_V = 1$ for granted? -- yes, it's the latter, see Stiegler 1995
-
-% \begin{equation}
-%   \Gamma_1^p \equiv \int_0^1 dx~g_1(x) = \frac{1}{9}[\frac{3}{4}a_3 + \frac{1}{4}a_8 + a_0]
-% \end{equation}
-
-% \begin{eqnarray*}
-%   a_3 \equiv g_A & = & 1.2670 \pm 0.0035 \\
-%   a_8 & = & 0.585 \pm 0.025
-% \end{eqnarray*}
+Hence a measurement of \(\Gamma_1^p\) allows the extraction of the flavor singlet \(a_0\), the quark spin contribution to the spin of the proton.  If one assumes that the sea quark distribution is either unpolarized or
+CP-symmetric and thus does not contribute to the spin of the proton, as Ellis and Jaffe did in 1974 \cite{Ellis:1973kp}, Equations \ref{eqn:su3-dis} and \ref{eqn:beta-decay} allow a \textit{prediction} of the quark spin contribution to the spin of the proton, namely \(a_0 = a_8 \approx 0.6\).
