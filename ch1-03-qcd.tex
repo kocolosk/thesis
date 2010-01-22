@@ -1,66 +1,104 @@
+% discuss asympt. freedom, factorization, pdfs in "QCD and improved model"
+
+% Then, in Access to DeltaG section, talk about scaling violation results and then pp asymmetries.
+
 \section{QCD and the improved Parton Model}
 
-The simple parton model is a heuristic that predates the acceptance of quantum
-chromodynamics (QCD) as the theory of the strong interaction. QCD introduces
-two important modifications to the parton model:
+The parton model results presented thus far assume that the photon scatters off
+a free quark, a simplification which completely neglects the strong interaction.
+In reality, quarks in the proton are tightly bound, constantly radiating and
+reabsorbing gluons. Quantum chromodynamics (QCD) enhances the parton model with
+interaction-dependent modifications of the simple parton model formulae. Two
+effects are of particular interest in this work. The first is a violation of
+parton density scaling; the distribution functions acquire a logarithmic
+dependence on \(Q^2\) which is calculable in perturbative QCD. The second is an
+anomalous gluonic contribution to \(a_0\), which at one time was thought to
+offer a resolution to the ``spin crisis''. % TODO caveat about glossing over technical details, plus a citation of some review paper?
+
+\subsection{Factorization and Scaling Violations}
+
+\begin{figure}
+  \includegraphics[width=1.0\textwidth]{figures/radiative-corrections}
+  \caption{Examples of first-order radiative corrections to the quark-photon vertex.}
+  \label{fig:radiative-corrections}
+\end{figure}
+
+Figure \ref{fig:radiative-corrections} illustrates two first-order gluonic
+corrections to the quark-photon vertex. The diagrams contain collinear
+divergences due to the massless quarks, so the size of each correction is
+actually infinite. The standard technique for dealing with these infinities is
+to factorize the reaction into a hard part calculable in perturbative QCD and a
+soft part which must be parameterized from experimental observations. Generally
+speaking, one encounters terms of the form
 %
-\begin{itemize}
-  \item Parton density scaling is violated by a logarithmic $Q^2$ dependence.
-  \item $g_1(x,Q^2)$ gains a contribution from the polarized gluon
-  distribution in the nucleon.
-\end{itemize}
+\begin{equation}
+  \alpha_s~ln \frac{Q^2}{m_q^2} = \alpha_s~ln \frac{Q^2}{\mu^2} + \alpha_s~ln \frac{\mu^2}{m_q^2}.
+\end{equation}
 %
+The first term on the right is included in the hard part of the interaction and
+the second (infinite) term is absorbed into the parton distribution functions.
+The factorization scale \(\mu^2\) is an arbitrary number, and exact physical
+results cannot depend on it, but since perturbative results are never exact the
+particular choice of scale is important. It turns out that an optimal choice is
+\(\mu^2 = Q^2\), which means that perfect Bjorken scaling of the distribution
+functions is broken; that is \(q(x) \rightarrow q(x,Q^2)\). However, the
+dependence on \(Q^2\) is only logarithmic and is calculable by a set of
+evolution equations which are presented later.
 
-Evolution of $g_1$: higher-order diagrams contain collinear divergences,
-infinities are handled by factorization which means a choice of factorization
-scale. $\mu^2 = Q^2$ is the ``optimal'' choice, as a result parton densities
-become $Q^2$-dependent. Dimensional regularization is ``crucial'' technique
-for handling collinear (and infrared?) divergences; there are ambiguities in
-the application of this technique for the polarized case, leading to
-competition between $\bar{MS}$, $AB$, and $JET$ factorization schemes ...
-After this, Leader jumps straight into writing down the evolution equations
-for the parton density functions.
-
+QCD factorization is completely general and not limited only to higher-order
+corrections to DIS. Consider the case of mid-rapidity pion production at a high
+energy proton-proton collider. The factorization theorem allows one to write the
+hadronic cross section for this process as a convolution of several independent
+entities: PDFs describing the probability of picking out a given parton from
+each proton, a hard partonic cross section, and a fragmentation function giving
+the probability that an outgoing quark will fragment into a pion with a fraction
+\(z\) of the parton's momentum. To wit:
+%
 \begin{equation}
-  \alpha_s~ln \frac{Q^2}{m_q^2} = \alpha_s~ln \frac{Q^2}{\mu^2} + \alpha_s~ln \frac{\mu^2}{m_q^2}
+  \sigma_{A+B \rightarrow \pi+X} = \sum_{a,b,c} f_a(x_A, Q^2) \otimes f_b(x_B, Q^2) \otimes \sigma_{a+b \rightarrow c + X} \otimes D_c^{\pi}(z) 
 \end{equation}
+%
+The sum is over all parton flavors that contribute to the hadronic cross
+section. The \(f_i\) are the parton distribution functions; \(D_c^{\pi}(z)\) is
+the pion fragmentation function for quark flavor \(c\). The partonic cross
+section is calculable using perturbative QCD when the \(Q^2\) of the interaction
+is large, while the PDFs and FFs must be parameterized from experimental
+results. Fortunately, those distribution functions are \textit{universal}; they
+can be measured in any process (commonly \(e^+e^-\) collisions) and then applied
+in the calculation of any other cross section. % TODO burton has a statement about the applicability of factorization in DIS and pp->jets with 2 references here
 
-do i need the evolution equations and splitting functions?
+\subsection{Anomalous gluonic contribution to $\Gamma_1$}
 
-gluon contribution to $g_1$:  gluonic version of Adler-Bell-Jackiw triangle diagram 
-
+A particularly interesting QCD correction to DIS is shown in Figure
+\ref{fig:box-diagram}. This correction involves the gluonic version of the Adler
+\cite{Adler:1969gk} and Bell and Jackiw \cite{Bell:1969ts} anomalous triangle
+diagram, and results in a gluonic contribution to the flavor singlet matrix
+element\footnote{This result is only valid in the \(AB\) and \(JET\)
+renormalization schemes. In the \(\overline{MS}\) scheme, where \(\Delta
+\Sigma\) itself varies with \(Q^2\), the gluonic contribution to \(a_0\) is
+zero.}:
+%
 \begin{equation}
-  a_0^{gluons}(Q^2) = -3 \frac{\alpha_s(Q^2)}{2\pi} \int_0^1 dx~\Delta g(x, Q^2)
+  a_0(Q^2) = \Delta \Sigma_q - 3\frac{\alpha_s(Q^2)}{2\pi} \Delta G(Q^2)
 \end{equation}
+%
+This result invalidates the simple parton model formula \ref{eqn:su3-dis} for
+\(a_0\) in terms of the quark spins. In the QCD enhanced parton model, a small
+measured value of \(\Gamma_1^p\) (and thus a small \(a_0\)) does not necessarily
+imply small quark polarization in the proton.
 
-or you could write it as
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/box-diagram}
+  \caption{QCD diagram leading to the anomalous gluon contribution}
+  \label{fig:box-diagram}
+\end{figure}
 
-\begin{equation}
-  a_0 = \Delta \Sigma - 3 \frac{\alpha_s}{2\pi}\Delta G
-\end{equation}
+Statement about \(\Delta \Sigma_q\) truly being the quark spin content even in the static limit, but since \(\Delta G\) and \(L_z\) are \(Q^2\)-dependent they have no interpretation in the static limit.
 
-NB: gluon contribution to $a_0$ is zero in $\bar{MS}$ scheme.  Need to use AB or JET scheme to obtain this result.
+Both \cite{Jaffe:2001dm} and \cite{Kuhn:2008sy} mention the \(A_{+} = 0\) gauge (here \(A^{\mu}\) is the gluon vector potential).  QCD is invariant under color gauge transformations, but the interpretation of individual Feynman diagrams is gauge-dependent.  The interpretation that ``looks like'' the parton model is obtained by using the light-cone gauge for the gluon vector potential.
 
-NB: QCD is invariant under color gauge transformations, but the interpretation of individual Feynman diagrams is gauge-dependent.  The interpretation that ``looks like'' the parton model is obtained by using the light-cone gauge for the gluon vector potential.
-
-More notes on this section from September 28:
-
-QCD corrections to the photon-quark interaction introduce correction terms
-that are collinearly divergent. These are renormalizable by factorizing into
-hard and soft parts. The optimal choice of a factorization scale is $\mu^2 =
-Q^2$, but this means that the (soft) parton densities are now $Q^2$-dependent
-and perfect Bjorken scaling is broken. However, the scaling is only
-logarithmic and is calculable via evolution equations.
-
-Experiments measure $A \approx A_1 \propto g_1$.  I'm not sure how the EMC experiment establishes that relation between $A_1$ and $g_1$, though.
-
-OK, so we have $Q^2$-dependent parton densities, and if we measure $g_1$ at
-multiple values of $Q^2$ for a given $x$ we can solve the evolution equation
-for $\Delta G$. When we do this, are we still interpreting $g_1$ using the
-simple parton model formula, or do we need to include the anomalous gluon
-contribution too?
-
-$g_1(x, Q^2)$ is certainly altered by the $Q^2$ evolution of the parton densities.  It becomes
+\(g_1\) evolution equation --- $\Delta C_{q,G}$ are ``Wilson coefficients evaluated from the hard part calculated beyond the Born approximation'' (whatever that means).
 
 \begin{equation}
   g_1(x, Q^2) = \frac{1}{2} \sum_{flavors} e_q^2 \left[\Delta q^2 + \Delta \bar{q}^2 + \frac{\alpha_s}{2 \pi} \left(ml\Delta C_q \otimes \Delta q + \Delta C_G \otimes \Delta G\right)\right]
@@ -71,18 +109,3 @@ by the evolution. In $\bar{MS}$ $a_3$ and $a_8$ are invariant, in $AB$ $\Delta
 \Sigma$ is invariant, and in $JET$ all three are. But, just because they are
 independent of $Q^2$ does not mean they keep their old definitions in terms of
 the first moments of parton densities, does it? I don't know.
-
-The Adler, Bell, Jackiw triangle diagram introduces an anomalous gluonic
-contribution to $a_0$, and thus to the first moment of $g_1$. This is
-completely separate from the $Q^2$ evolution of the parton densities. It means
-that a small measured value of $a_0$ does not necessarily imply small quark
-polarization in the proton (this interpretation only valid in $AB$ and $JET$,
-because $\Delta \Sigma$ varies with $Q^2$ in $\bar{MS}$ and thus it is not
-appropriate to consider it as a spin).
-
-So the question becomes, if I were to take the first moment of $g_1(x)$ as
-written above, would I get $\frac{1}{9}\left[\frac{3}{4}a_3+\frac{1}{4}a_8 +
-a_0\right]$, where $a_0$ now includes the anomalous gluonic term? Can it be
-that simple?
-
-$\Delta C_{q,G}$ are ``Wilson coefficients evaluated from the hard part calculated beyond the Born approximation'' (whatever that means).
