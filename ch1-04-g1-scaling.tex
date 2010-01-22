@@ -1,6 +1,20 @@
 \subsection{Scaling Violations in parton densities}
 
-Much smaller $Q^2$ lever arm than in the unpolarized case.
+QCD introduces a \(Q^2\) dependence into the parton distribution functions which is calculable using the evolution equations
+%
+\begin{eqnarray}
+  \frac{d~\Delta q(x,Q^2)}{d~ln Q^2} &=& \frac{\alpha_s}{2 \pi} \left[ \Delta P_{qq} \otimes \Delta q + \Delta P_{qg} \otimes \Delta g \right] \nonumber \\
+  \frac{d~\Delta g(x,Q^2)}{d~ln Q^2} &=& \frac{\alpha_s}{2 \pi} \left[ \Delta P_{gq} \otimes \Delta q + \Delta P_{gg} \otimes \Delta g \right].
+\end{eqnarray}
+%
+The \(\Delta P\) are polarized splitting functions calculated perturbatively in \(\alpha_s\).  The original parton model equation for \(g_1\) \ref{eqn:simple-g1} becomes
+%
+\begin{equation}
+  g_1(x, Q^2) = \frac{1}{2} \sum_{j} e_j^2 \left[\Delta q_j^2 + \Delta \bar{q}_j^2 + \frac{\alpha_s}{2 \pi} \left(\Delta C_j \otimes \left[\Delta q_j + \Delta \bar{q}_j\right] + \Delta C_g \otimes \Delta g\right)\right].
+  \label{eqn:enhanced-g1}
+\end{equation}
+%
+where the sum is over flavors and the \(\Delta C_j\) are Wilson coefficients. Given measurements of \(g_1\) at a fixed value of \(x\) and varying \(Q^2\), one can use \ref{eqn:enhanced-g1} to solve for the polarized gluon density. The  technique has proven very effective in unpolarized DIS, where precise measurements of the structure functions across five decades in \(Q^2\) yield an excellent ``lever arm''.  In contrast, Figure \ref{fig:g1-versus-q2} plots the world data on \(g_1\).  Extractions of \(\Delta g(x)\) from these data are prone to significant uncertainties.  An example analysis from Leader, Sidorov, and Stamenov is shown in Figure \ref{fig:g1-deltag}; in that analysis, even the sign of the gluon polarization is not constrained by the data.
 
 \begin{figure}
   \centering
@@ -11,22 +25,6 @@ Much smaller $Q^2$ lever arm than in the unpolarized case.
   % http://www2.lns.mit.edu/eic/Bruell.pdf
   \label{fig:g1-versus-q2}
 \end{figure}
-% \begin{figure}
-%   \includegraphics[width=1.0\textwidth]{figures/g1vsx}
-%   \caption{World data on the $g_1$ structure functions of the proton, neutron, and deuteron \cite{Amsler:2008zzb}}
-%   \label{fig:g1vsx}
-% \end{figure}
-
-% \begin{figure}
-%   \includegraphics[width=1.0\textwidth]{figures/pol_pdf_5}
-%   \caption{from the Particle Data Group \cite{Amsler:2008zzb}.  Data points are SIDIS measurements using positron (HERMES) and muon (SMC).  SMC results extracted assuming $\Delta \bar u(x) = \Delta \bar d(x)$}
-%   \label{fig:pol_pdf_5}
-% \end{figure}
-
-% \begin{figure}
-%   \includegraphics[width=1.0\textwidth]{figures/aac03}
-%   \caption{\cite{Hirai:2003pm}  BB \cite{Bluemlein:2002be} uses ISET=3, LSS \cite{Leader:2001kh} uses $\bar{MS}$, GRSV \cite{Gluck:2000dy} uses STD.  But this is of course \textit{not} the most recent polarized PDF analysis using only DIS and SIDIS data.  My best guess at that is \cite{Leader:2006xc}}
-% \end{figure}
 
 \begin{figure}
   \centering
@@ -36,6 +34,5 @@ Much smaller $Q^2$ lever arm than in the unpolarized case.
   systematic uncertainties summed in quadrature. Analyses assuming positive,
   negative, and sign-changing gluon polarization all resulted in a comparable
   goodness-of-fit \cite{Leader:2006xc}}
+  \label{fig:g1-deltag}
 \end{figure}
-
-% Need to understand what constraints go into positive/negative/sign-changing $\Delta g(x)$ parameterizations.
