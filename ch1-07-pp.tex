@@ -1,58 +1,33 @@
 \subsection{Polarized Proton Collisions}
 
-% factorization
-% universality of PDFs and FFs
-% partonic cross sections calculable in perturbative QCD
-
-The remainder of this work will focus on extracting information on $\Delta G$
-from collisions of polarized proton beams, a task that is made possible by
-three key features of the QCD-improved parton model:
-
-\begin{enumerate}
-  \item Particle production cross sections can be factorized into a
-  convolution of long-range parton distribution functions and fragmentation
-  functions and a short-range partonic cross section;
-  \item the parton distribution functions and fragmentation functions are
-  universal; that is, they can be measured in one reaction and applied to any
-  other; and
-  \item partonic cross sections in the kinematic range of interest for $\Delta
-  G$ studies are calculable using perturbative QCD.
-\end{enumerate}
-
-% The QCD-improved parton model allows us to write cross sections in factorized form as a convolution of parton distribution functions, fragmentation functions, and a parton-level cross section.
-Ignoring polarization for the moment, we can express the cross section for
-inclusive pion production in this framework as a sum over parton flavors
-$i,j,k$
-%
-\begin{equation}
-  \sigma^{pp \rightarrow \pi X} = \sum_{i,j,k} \int~dx_1 dx_2 dz~ q_i(x_1) \cdot q_j(x_2) \cdot \sigma^{ij \rightarrow k X}(x_1 p_1,x_2 p_2, p_{\pi}/z) \cdot D_k^\pi(z).
-  \label{eqn:factorized}
-\end{equation}
-%
-Here $p_1$ and $p_2$ are the momenta of the colliding proton beams and
-$p_{\pi}$ is the momentum of the outgoing pion, while $D_k^{\pi}(z)$ is the
-fragmentation function expressing the probability that a parton of flavor $k$
-produces a pion carrying a fraction $z$ of the parton's
-momentum.\footnote{This interpretation of the fragmentation function is valid
-in the simple parton model, and in the QCD improved parton model if one is
-working in the light-cone gauge.} Equation \ref{eqn:factorized} is commonly
-written using the convolution notation
-%
-\begin{equation}
-  \sigma^{pp \rightarrow \pi X} = \sum_{i,j,k} q_i \otimes q_j \otimes \sigma^{ij \rightarrow kX} \otimes D_k^\pi
-\end{equation}.
-
-
-\begin{equation}
-  A_{LL} = \frac{\sum_{f_1,f_2,f}~\Delta f_1 \otimes \Delta f_2 \otimes \sigma^{f_1 f_2 \rightarrow f X'} \hat a_{LL}^{f_1 f_2 \rightarrow f X'} \otimes D_f}{\sum_{f_1,f_2,f}~f_1 \otimes f_2 \otimes \sigma^{f_1 f_2 \rightarrow f X'} \otimes D_f} 
-\end{equation}
-
-\begin{equation}
-  \hat a_{LL}^{f_1 f_2 \rightarrow f X'} = \frac{\Delta \sigma^{f_1 f_2 \rightarrow f X'}}{\sigma^{f_1 f_2 \rightarrow f X'}}
-\end{equation}
+DIS is an electromagnetic process, so the techniques used to study the polarized gluon distribution in that environment must rely on higher-order QCD effects. In contrast, collisions of polarized protons are usually mediated by the strong force. Spin-dependent observables in these collisions are  directly sensitive to the polarized gluon content, as a significant fraction of hard scatterings contain one or more gluons in the initial partonic state. A given observable's particular sensitivity to polarized glue is calculable thanks to the triumvirate of asymptotic freedom, factorization, and PDF universality.  As of this writing, calculations performed at next-to-leading order (NLO) are the state of the art.
 
 \begin{figure}\begin{center}
   \includegraphics[width=0.5\textwidth]{figures/partonic_asymmetry}
   \caption{Lowest-order analyzing powers for various partonic subprocesses
   present in polarized proton collisions \cite{Bunce:2000uv}.}
+  \label{fig:partonic-asymmetries}
 \end{center}\end{figure}
+
+In principle one could directly measure a polarized cross section, e.g. a polarized analogue to \ref{eqn:factorization}.  In practice, a more precise result is obtained through asymmetry measurements that use the ratio of polarized and unpolarized cross sections to cancel out several sources of spin-independent uncertainty present in the absolute cross section measurements.  The observable of primary interest in this work is \(A_{LL}\), defined for inclusive pion production as
+%
+\begin{equation}
+  A_{LL}(\pi + X) = \sum_{a,b,c} \frac{\Delta f_a(x_A, Q^2) \otimes \Delta f_b(x_B, Q^2) \otimes \left[ \hat{a}_{LL}^{ab \rightarrow cX} \sigma_{ab \rightarrow cX} \right] \otimes D_c^{\pi}(z)}{f_a(x_A, Q^2) \otimes f_b(x_B, Q^2) \otimes \sigma_{ab \rightarrow cX} \otimes D_c^{\pi}(z)}.
+\end{equation}
+%
+\(\hat{a}_{LL}^{ab \rightarrow cX} \equiv \Delta \sigma_{ab \rightarrow cX} / \sigma_{ab \rightarrow cX}\) is the asymmetry of the underlying partonic hard scattering.  Figure \ref{fig:partonic-asymmetries} plots partonic asymmetries calculated using perturbative QCD for common subprocesses.  \(A_{LL}\) for charged pion production integrates over all five of these subprocess asymmetries.
+
+\(A_{LL}\) can be measured and interpreted in a perturbative QCD context for a wide variety of final states. This thesis presents results on \(A_{LL}\) for inclusive charged pion production, as well as for charged pions produced azimuthally opposite an identified jet.  Figure \ref{fig:all-predictions} shows the effect of polarized glue on these observables.  The curves represent asymmetries calculated perturbatively at NLO assuming various polarized gluon distributions, ranging from an unpolarized glue (GRSV ZERO) to extreme fully-polarized scenarios (GRSV MIN).  The STD scenario in the GRSV \cite{Gluck:2000dy} set represented a best-fit extraction of polarized structure functions from \(g_1\) evolution data at the time of its release, while Gehrmann and Stirling's ``Set C'' \cite{Gehrmann:1995ag} is a scenario in which gluons are strongly polarized at low \(x\) but the overall integral of the gluon polarization is small thanks to a node in the distribution function.  Finally, the DSSV \cite{deFlorian:2008mr} set of structure functions is the first to incorporate data from measurements of \(A_{LL}\), specifically the inclusive \(\pi^0\) channel at PHENIX and the inclusive jet channel at STAR.  The measurements in this thesis can be included in a future update to the DSSV set and other similar global analyses in order to directly inform our understanding of the polarized gluon distribution.
+
+
+\begin{figure}
+  \subfloat{
+    \includegraphics[width=1.0\textwidth]{figures/inclusive_predictions}
+  }
+  \newline
+  \subfloat{
+    \includegraphics[width=1.0\textwidth]{figures/jet_pion_predictions}
+  }
+  \caption{Predictions for $A_{LL}$ assuming various input distributions for the gluon polarization \cite{Gluck:2000dy, Gehrmann:1995ag, deFlorian:2008mr}. The pion fragmentation functions can be found in \cite{deFlorian:2007nk}, and the NLO calculation was performed in the purely inclusive case by J\"ager et al. \cite{Jager:2002xm}, and in the jet + pion case by de Florian \cite{deFlorian:2009fw}.}
+  \label{fig:all-predictions}
+\end{figure}
