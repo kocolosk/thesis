@@ -55,7 +55,8 @@ the probability that an outgoing quark will fragment into a pion with a fraction
 \(z\) of the parton's momentum. To wit:
 %
 \begin{equation}
-  \sigma_{A+B \rightarrow \pi+X} = \sum_{a,b,c} f_a(x_A, Q^2) \otimes f_b(x_B, Q^2) \otimes \sigma_{a+b \rightarrow c + X} \otimes D_c^{\pi}(z) 
+  \sigma_{p_A+p_B \rightarrow \pi+X} = \sum_{a,b,c} f_a(x_A, Q^2) \otimes f_b(x_B, Q^2) \otimes \sigma_{a+b \rightarrow c + X} \otimes D_c^{\pi}(z)
+  \label{eqn:factorization}
 \end{equation}
 %
 The sum is over all parton flavors that contribute to the hadronic cross
@@ -80,6 +81,7 @@ zero.}:
 %
 \begin{equation}
   a_0(Q^2) = \Delta \Sigma_q - 3\frac{\alpha_s(Q^2)}{2\pi} \Delta G(Q^2)
+  \label{eqn:qcd-a0}
 \end{equation}
 %
 This result invalidates the simple parton model formula \ref{eqn:su3-dis} for
@@ -94,12 +96,23 @@ imply small quark polarization in the proton.
   \label{fig:box-diagram}
 \end{figure}
 
-Statement about \(\Delta \Sigma_q\) truly being the quark spin content even in the static limit, but since \(\Delta G\) and \(L_z\) are \(Q^2\)-dependent they have no interpretation in the static limit.
+\subsection{Spin Sum Rules}
 
-Both \cite{Jaffe:2001dm} and \cite{Kuhn:2008sy} mention the \(A_{+} = 0\) gauge (here \(A^{\mu}\) is the gluon vector potential).  QCD is invariant under color gauge transformations, but the interpretation of individual Feynman diagrams is gauge-dependent.  The interpretation that ``looks like'' the parton model is obtained by using the light-cone gauge for the gluon vector potential.
+The formulation in \ref{eqn:qcd-a0} has the attractive property that \(\Delta \Sigma_q\) is independent of \(Q^2\) and can be thought of as the quark helicity contribution even in the static (\(Q^2 \rightarrow 0\)) limit. Working in the light-cone gauge, one can write a sum rule for the proton spin which takes the form \cite{Hagler:1998kg, Harindranath:1998ve, Bashinsky:1998if}
+%
+\begin{equation}
+  \frac{1}{2} = \frac{1}{2}\Delta \Sigma_q + \Delta G + L_q + L_g.
+  \label{eqn:jaffe-sum-rule}
+\end{equation}
+%
+Unfortunately, the last two terms are not experimentally accessible.  Lattice QCD can measure angular momentum contributions to the proton spin, but it does so in a different gauge and the sum rule \ref{eqn:jaffe-sum-rule} is not gauge invariant.
 
-Depending on the factorization scheme, the first moments might not be altered
-by the evolution. In $\bar{MS}$ $a_3$ and $a_8$ are invariant, in $AB$ $\Delta
-\Sigma$ is invariant, and in $JET$ all three are. But, just because they are
-independent of $Q^2$ does not mean they keep their old definitions in terms of
-the first moments of parton densities, does it? I don't know.
+There exists an alternative sum rule \cite{Jaffe1990509, Ji:1996ek}
+%
+\begin{equation}
+  \frac{1}{2} = \frac{1}{2}\Delta \Sigma_q + \hat{L}_q + \hat{J}_g
+\end{equation}
+%
+where \(\hat{L}_q\) and \(\hat{J}_g\) correspond roughly to the orbital angular momentum of quarks and the total angular momentum of gluons in the nucleon. \(\hat{J}_q = \frac{1}{2}\Delta \Sigma + \hat{L}_q\) is measurable using deeply virtual Compton scattering. \(\hat{J}_g\) can then in principle be obtained through the evolution of \(\hat{J}_q\), although no experiment in the foreseeable future will provide sufficient data for that enterprise.
+
+[End the subsection on a happier note; theorists may not have a perfectly clean model for decomposing the spin of the proton into experimental observables, but the just means experiments need to lead the way.  Or something like that.]
