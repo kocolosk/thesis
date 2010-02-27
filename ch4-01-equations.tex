@@ -1,21 +1,19 @@
 \section{$A_{LL}$ Methodology}
 
-We begin with the equation for a double spin asymmetry,
+We begin with the equation for a double spin asymmetry in terms of directly measurable quantities,
 %
 \begin{equation}
   A_{LL} = \frac{\sum_{runs} P_{Y}P_{B}\left[(N_{uu} + N_{dd}) - R(N_{ud} + N_{du})\right]}{\sum_{runs} P_{Y}^{2}P_{B}^{2}\left[(N_{uu} + N_{dd}) + R(N_{ud} + N_{du})\right]}.
+  \label{eqn:all-basics}
 \end{equation}
 %
-Henceforth we employ parity conservation; the \(++\) subscript denotes a sum
+Henceforth parity conservation is employed; the \(++\) subscript denotes a sum
 over the \(uu\) and \(dd\) states and the \(+-\) subscript a sum over \(ud\)
-and \(du\) states. \(P_Y\) and \(P_B\) are the Yellow and Blue beam
+and \(du\) states. \(P_Y\) and \(P_B\) are the Yellow and Blue RHIC beam
 polarizations, \(N_{ij}\) are spin-dependent charged pion yields, and \(R =
 \frac{\mathcal{L}_{++}}{\mathcal{L}_{+-}}\) is a ratio of sampled luminosities
 in different spin configurations. Each of the $\mathcal{L}_{ij}$ is a sum of
-the scaler counts from board 5 over bunch crossings with that spin state. The
-sum is restricted to a set of timebins chosen to approximate a 60~cm cut on
-the $z$ position of the vertex; in the 2005 analysis timebins 7, 8, and 9 were
-selected, while the 2006 analysis added timebin 6 into the sum.
+the scaler counts over bunch crossings with that spin state.
 
 The formula for the statistical uncertainty on \(A_{LL}\) neglects
 uncertainties on the relative luminosities and beam polarizations. Assuming
@@ -28,8 +26,8 @@ asymmetry for a single run is
 %
 where \(N\) and \(D\) are the numerator and denominator of the raw asymmetry
 (that is, neglecting polarizations), and \(COV(N,D) = N_{++} - R^2 N_{+-}\).
-In the case of small asymmetries (\(\frac{1}{N^2} \gg \frac{1}{D^2} - \frac{2
-COV(N,D)}{ND}\)), the uncertainty on the numerator dominates the uncertainty
+In the case of small asymmetries \(\frac{1}{N^2} \gg (\frac{1}{D^2} - \frac{2
+COV(N,D)}{ND}\)), and the uncertainty on the numerator dominates the uncertainty
 on \(A_{LL}\):
 %
 \begin{equation}
@@ -43,21 +41,27 @@ straightforward since the yields for each run are uncorrelated.
 \subsection{Multi-Particle Statistics}
 
 This analysis often accepts multiple pions from a single event. Treating each
-of these particles as an independent event and na\"ively using
-$\sqrt{N_{pions}}$ for the errors as in the previous section is not correct.
-Following the prescription in \cite{sowinski-multiparticle-statistics} we fill
-each bin in a histogram at most once per event, using a weight equal to the
-number of particles that fell into the bin. This technique neglects
-correlations across bins.
+of the particles as an independent event and na\"ively using
+$\sqrt{N_{pions}}$ for the statistical uncertainty as in the previous section
+is not correct. Following the prescription in
+\cite{sowinski-multiparticle-statistics} each bin in a histogram is
+incremented at most once per event, using a weight equal to the number of
+particles that fell into the bin. This technique neglects intra-event particle
+correlations across histogram bins.
 
 \subsection{Background Subtraction}
 
-Next we consider asymmetries with sideband subtraction. Specifically, the raw
-charged pion asymmetries in this analysis are contaminated by protons, kaons,
-and electrons. The protons and kaons are necessarily combined into a single
-sideband. Both sidebands have some non-negligible pion contribution. We start
-by defining a reduced background fraction that accounts for the impurities in
-the sideband:
+As discussed in Section \ref{sec:pid}, a particle's energy loss per unit path
+length (dE/dx) in the TPC provides an effective means of identification across
+a broad range of momenta. In the momentum range of interest (2.0 GeV/c and up)
+charged pions are not fully separated from heavier charged hadrons (primarily protons and kaons, which have a smaller \(\langle dE/dx \rangle\)) and
+electrons (which have a larger \(\langle dE/dx \rangle\)). This contamination is addressed by subtracting the asymmetry of
+the background from the raw asymmetry calculated using all
+particles in the charged pion acceptance window. The background sidebands located on both sides of the acceptance window have different physical sources and potentially different double spin asymmetries.  The subtraction
+procedure must also account for the lack of a clean background sample; the
+sidebands themselves have a non-negligible contamination from the charged pion
+signal. We start by defining a reduced background fraction to account for the
+impurities in the sideband:
 
 \begin{equation*}
   f_{x}(y) = \frac{x~\mathrm{counts~in}~y~\mathrm{window}}{\mathrm{total~ in}~y~\mathrm{window}}
@@ -72,11 +76,15 @@ statistical uncertainty are only modified by replacing the background fraction
 for each sideband with its reduced background fraction:
 
 \begin{equation}
-  A_{LL}^{\pi} = \frac{ A_{LL}^{\pi,raw} - f'(p+K)A_{LL}^{p+K,raw} - f'(e)A_{LL}^{e,raw} }{1 - f'(p+K) - f'(e) }
+  A_{LL}^{\pi} = \frac{ A_{LL}^{\pi,raw} - f'(p+K)A_{LL}^{p+K,raw} - f'(e)A_{LL}^{e,raw} }{1 - f'(p+K) - f'(e) },
   \label{eqn:all}
 \end{equation}
 
 \begin{equation}
-  \sigma_{A_{LL}^{\pi}} = \frac{\sqrt{ \sigma_{A_{LL}^{raw}}^{2} + f'(p+K)^{2} * \sigma_{A_{LL}^{p+K,raw}}^{2} + f'(e)^{2} * \sigma_{A_{LL}^{e,raw}}^{2} }}{1 - f'(p+K) - f'(e)}
+  \sigma_{A_{LL}^{\pi}} = \frac{\sqrt{ \sigma_{A_{LL}^{raw}}^{2} + f'(p+K)^{2} * \sigma_{A_{LL}^{p+K,raw}}^{2} + f'(e)^{2} * \sigma_{A_{LL}^{e,raw}}^{2} }}{1 - f'(p+K) - f'(e)}.
   \label{eqn:sigma-all}
 \end{equation}
+%
+These equations are the final formulae used to calculate the asymmetries for a single STAR run in this work.  The \(raw\) superscript in the formulae denotes an \(A_{LL}\) calculated without background subtraction but taking multi-particle statistics into account.
+
+Equation \ref{eqn:all-basics} specified beam polarizations, spin-dependent relative luminosities, and spin-sorted particle yields as the three components to a double spin asymmetry measurement.  A discussion of the extraction of each of these quantities follows.
