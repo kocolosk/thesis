@@ -78,28 +78,35 @@ sets the luminosity-weighting correction term to unity and includes a
 systematic uncertainty term reflecting a possible difference in polarization
 profiles in the two transverse dimensions.
 
-The final results of fill-by-fill beam polarizations are shown in Figure
-\ref{fig:beam-polarizations}. % something about uncertainties
-
-% ok, so we get the average beam polarization by calculating Pmax and R from polarization v. event rate in the scans.  In 2006 that's easy, we have a scan each time.  In 2005, this is the global C_1X number for each beam extracted from the polarization v rate
-
-% --- quality checks on carbon mode data
-% width of carbon mass peak
-% energy slope
-% chi2 for bunch-by-bunch left-right asymmetries (poor chi2 == uncollimated beam)
-
-% polarization values for experiments obtained by intensity^2 - weighted average of polarization profiles (right?  because polarization is different for different parts of the beam, and our events come from all parts of the beam, but mostly in the center).
+The final fill-by-fill beam polarizations are shown in Figure
+\ref{fig:beam-polarizations}.  The error bars represent statistical and systematic uncertainties summed in quadrature.  The statistical uncertainty for a fill is obtained by weighting the individual pC measurements in a fill according to their statistical uncertainty and the duration of time for which the measurement was ``current''.  A variety of sources of systematic uncertainty are evaluated, including  variations in the ``dead layer'' correction that translates deposited recoil carbon energy to kinetic energy, contributions from molecular hydrogen in the H-jet target, and imprecise knowledge of the beam polarization profile.  A final tally of the polarizations and their overall uncertainties is given in Table~\ref{tab:polarizations}  Further details of the analysis can be found in \cite{CNI05, CNI06}.
 
 \begin{figure}
-  \subfloat[][2005 fills]{
+  \subfloat[][Run 5]{
     \includegraphics[width=1.0\textwidth]{figures/beam_polarizations_05}
   } \\
-  \subfloat[][2006 fills]{
+  \subfloat[][Run 6]{
     \includegraphics[width=1.0\textwidth]{figures/beam_polarizations_06}
   }
   \caption{RHIC beam polarizations for longitudinally polarized stores analyzed in this work.}
   \label{fig:beam-polarizations}
 \end{figure}
 
-\subsection{Polarization Vectors and Transverse Asymmetries}
-
+\begin{table}
+  \centering
+  \begin{tabular}{cc|cc}
+    \hline
+     & & Polarization & Total Uncertainty (dP/P)\\
+    \hline
+    Run 5 &  Blue & 50.2\% & 5.9\%\\
+    Run 5 &  Yellow  & 46.9\% & 6.2\%\\
+    Run 5 &  Combined & - & 9.4\%\\
+    \hline
+    Run 6 &  Blue & 55.9\% & 4.7\%\\
+    Run 6 &  Yellow & 58.1\% & 4.8\%\\
+    Run 6 &  Combined & - &  8.3\%\\
+    \hline
+  \end{tabular}
+  \caption{Final Beam Polarizations}
+  \label{tab:polarizations}
+\end{table}
