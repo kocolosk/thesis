@@ -232,7 +232,7 @@ of events selected by the L0 and L2 trigger algorithms can be recorded to
 tape. The L3 tracking output continues to serve as a useful qualitative
 monitoring tool in the STAR control room.
 
-\subsection{Beam Beam Counters}
+\subsection{Beam Beam Counters\label{sec:bbc}}
 
 The BBCs \cite{Kiryluk:2003aw} consist of two hexagonal scintillator arrays,
 one immediately outside each magnet poletip 3.7~m from the interaction point.
@@ -265,7 +265,7 @@ colliding protons. The coincident cross section was found to be 26.1 $\pm$
 diffractive pp cross section \cite{Adams:2003kv}. This translates into a
 typical BBC coincidence rate for 2005(2006) data of $\sim$180(??)~kHz.
 
-\subsection{Zero Degree Calorimeters}
+\subsection{Zero Degree Calorimeters\label{sec:zdc}}
 
 The ZDCs \cite{Adler:2003sp} are hadron calorimeters placed 18~m upstream on
 each side of the the STAR interaction point. This places them on a line with
@@ -278,6 +278,20 @@ are designed to be sensitive to neutrons from heavy ion reactions and thus are
 not used as trigger detectors in the pp program. They do serve as a secondary
 luminosity monitor useful for many systematic error checks. They typically
 count a factor of 100 less than the BBC.
+
+\subsection{Scaler System\label{sec:scalers}}
+
+Signals from the L0 Trigger and the BBCs and ZDCs are processed by a set of 12
+Scaler Boards \cite{scalers}. A Board is a custom VME histogramming module with
+24 input bits, the combination of which maps to one of \(2^{24}\) 40 bit memory
+locations on the module. 7 input bits are reserved for an encoding of the bunch
+crossing number, leaving 17 for detector-specific logic. The memory location
+addressed by a particular 24 bit input pattern is incremented when an event
+satisfies that bit pattern. The scaler system typically tracks hits in the East
+and West halves of the luminosity monitors separately, as well as a variety of
+coincidences with different \(\Delta T\) requirements. Some of the boards are in
+continuous operation during a STAR run, while others sample at discrete
+intervals.
 
 \subsection{Electromagnetic Calorimeters}
 
