@@ -1,0 +1,51 @@
+% beam polarization vectors and A_sigma - 1 day.  Don't go into too many details of the determination of the beam vector, just say it was based on an analysis of left/right and up/down asymmetries in the BBCs during longitudinal and transverse running.
+
+\subsection{Polarization Vectors and Transverse Asymmetries}
+
+The BBCs enable local polarimetry at STAR.  Vertical polarization in the beam generates an asymmetry in the counts recorded by the left and right halves of the BBC on which it impinges, while radial polarization generates an asymmetry in the top and bottom halves of the detector.  An accurate accounting of residual non-longitudinal polarization in the beams is important, because a double transverse spin asymmetry \(A_{\Sigma}\) could generate a false \(A_{LL}\).  The size of this false signal is given by the equation
+%
+\begin{equation}
+  \delta A_{LL}^{\mathrm{non-longitudinal}} = | \tan(\theta_B) \tan(\theta_Y) \cos(\phi_B - \phi_Y) A_{\Sigma} |.
+  \label{eqn:pol-vector-uncertainty}
+\end{equation}
+%
+The beam polarization angles at STAR are determined through an analysis of cross ratios in the BBCs \cite{Kiryluk:2005gg}.  These ratios are directly sensitive to the azimuthal angle of the beam, and a comparison of the ratios in longitudinal and transverse running allows an extraction of the angle of inclination.  The measured ratio is 
+%
+\begin{equation}
+  \epsilon_{BBC} = \frac{r_{ij} -1}{r_{ij} + 1} \simeq \left\{
+  \begin{array}{l l}
+    A_N^{BBC} \times P_v \times \langle \cos \phi \rangle & i,j = \mbox{Left, Right} \\
+    A_N^{BBC} \times P_r \times \langle \sin \phi \rangle & i,j = \mbox{Up, Down} \\
+  \end{array} \right.
+\end{equation}
+%
+in which \(r_{ij} = \sqrt{\frac{N_i^{\uparrow} N_j^{\downarrow}}{N_i^{\downarrow} N_j^{\uparrow}}}\) and \(N_{i(j)}^{\uparrow(\downarrow)}\) are the spin dependent yields on the Left(Right) or Up(Down) side of the detector. \(P_{v(r)}\) is the vertical (radial) beam polarization.  Table~\ref{tab:pol-vectors} tabulates the extracted polarization vectors from measurements of the BBC cross-ratios.  There are two separate extractions for the 2006 data because the spin rotator magnets were adjusted midway through the run.  The data show a steady improvement in the performance of the spin rotators.
+
+% due to the large non-statistical variations, ∼1.5 degrees, in the estimate of the polar angle coming from the the up/down asymmetries in the transverse running, we decided to use a conservative estimate of cos(φY − φB) = 1.
+
+% that doesn't make much sense ... UD transverse asymmetries don't contribute to the determination of the polar angle to first order.
+
+% also, the formulae to get the beam angles from these asymmetries are inconsistent.  But Murad's numbers for tan(theta) and phi do yield his numbers for the multiplicative factor in front of Asigma
+
+% Table of Beam Polarization Vectors
+\begin{table}
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      Run Period & Blue ($\theta, \phi$) & Yellow ($\theta, \phi$) \\
+      \hline
+      2005 & (7.9, 74.0) & (17.2, 138.7) \\
+      2006a (7132001-7138034) & (6.9, 87.7) & (10.0, 34.4) \\ 
+      2006b (7138035-7156040) & (0.9, 69.3) & (3.9, -47.8)
+    \end{tabular}
+  \end{center}
+  \caption{Beam polarization vectors as determined from an analysis of up-down and left-right asymmetries in the BBCs.  The spin rotators were adjusted midway through the second longitudinal running period in 2006.}
+  \label{tab:pol-vectors}
+\end{table}
+
+
+% use cos(phi_B - phi_Y) = 1 as conservative estimate since polar angle measurements exhibit non-statistical fluctuations in 2006.
+
+% asigma graphs for 2006, cleaned up
+
+% limited transverse running in 2005, different trigger thresholds in 2006.  Not fair to calculate A_sigma in 2006 and use it for 2005.  Assume 10%, flat in pT.  Not sure if it's justified by any data analysis I've done.
+
