@@ -29,13 +29,15 @@ in which \(r_{ij} = \sqrt{\frac{N_i^{\uparrow} N_j^{\downarrow}}{N_i^{\downarrow
 % Table of Beam Polarization Vectors
 \begin{table}
   \begin{center}
-    \begin{tabular}{l|c|c|r}
+    \begin{tabular}{|l|c|c|r|}
+      \hline
       Run Period & Blue ($\theta, \phi$) & Yellow ($\theta, \phi$) &
       $\frac{\delta A_{LL}}{A_{\Sigma}}$\\
       \hline
       2005 & (7.9, 74.0) & (17.2, 138.7) & 0.0184 \\
       2006a (7132001-7138034) & (6.9, 87.7) & (10.0, 34.4) & 0.0128 \\
-      2006b (7138035-7156040) & (0.9, 69.3) & (3.9, -47.8) & 0.0005
+      2006b (7138035-7156040) & (0.9, 69.3) & (3.9, -47.8) & 0.0005 \\
+      \hline
     \end{tabular}
   \end{center}
   \caption{Beam polarization vectors as determined from an analysis of up-down and left-right asymmetries in the BBCs.  The spin rotators were adjusted midway through the second longitudinal running period in 2006.  A weighted average of the two 2006 results yields $\delta A_{LL} / A_{\Sigma} = 0.006$.}
@@ -65,16 +67,18 @@ Tables~\ref{tab:syst-pol-2005} and \ref{tab:syst-pol-2006} contain the final sys
 
 \begin{table}
   \centering
-  \begin{tabular}{c||c|c||c|c}
-    $p_{T}$ & \multicolumn{2}{c||}{$\pi^{-}$} & \multicolumn{2}{c}{$\pi^{+}$} \\
+  \begin{tabular}{|c||c|c||c|c|}
     \hline
+    \multirow{2}{*}{$p_T$} & \multicolumn{2}{c||}{$\pi^{-}$} & \multicolumn{2}{c|}{$\pi^{+}$} \\
+    \cline{2-5}
     & $A_{\Sigma}$ & $\delta A_{LL}$ ($10^{-4}$) & $A_{\Sigma}$ & $\delta A_{LL}$ ($10^{-4}$) \\
     \hline
     2.00 - 3.18  & -0.158 $\pm$ 0.077 & 29.1  & -0.050 $\pm$ 0.073 & 13.4  \\
     3.18 - 4.56  & -0.044 $\pm$ 0.125 & 23.0  & ~0.139 $\pm$ 0.124 & 25.6  \\
     4.56 - 6.32  & ~0.176 $\pm$ 0.203 & 37.4  & -0.324 $\pm$ 0.192 & 59.6  \\
     6.32 - 8.80  & -0.134 $\pm$ 0.325 & 59.8  & -0.139 $\pm$ 0.311 & 57.2  \\
-    8.80 - 12.84 & -0.185 $\pm$ 0.656 & 120.7 & -0.821 $\pm$ 0.524 & 151.1
+    8.80 - 12.84 & -0.185 $\pm$ 0.656 & 120.7 & -0.821 $\pm$ 0.524 & 151.1 \\
+    \hline
   \end{tabular}
   \caption{Systematic uncertainty on $A_{LL}$ due to residual transverse beam polarization in the 2005 RHIC run.}
   \label{tab:syst-pol-2005}
@@ -82,15 +86,17 @@ Tables~\ref{tab:syst-pol-2005} and \ref{tab:syst-pol-2006} contain the final sys
 
 \begin{table}
   \centering
-  \begin{tabular}{c||c|c||c|c}
-    $z$ & \multicolumn{2}{c||}{$\pi^{-}$} & \multicolumn{2}{c}{$\pi^{+}$} \\
+  \begin{tabular}{|c||c|c||c|c|}
     \hline
+    \multirow{2}{*}{$z$} & \multicolumn{2}{c||}{$\pi^{-}$} & \multicolumn{2}{c|}{$\pi^{+}$} \\
+    \cline{2-5}
     & $A_{\Sigma}$ & $\delta A_{LL}$ ($10^{-4}$) & $A_{\Sigma}$ & $\delta A_{LL}$ ($10^{-4}$) \\
     \hline
     0.20 - 0.30 & -0.014 $\pm$ 0.016 & 1.0 & ~0.007 $\pm$ 0.015 & 0.9 \\
     0.30 - 0.45 & -0.027 $\pm$ 0.023 & 1.6 & -0.025 $\pm$ 0.022 & 1.5 \\
     0.45 - 0.65 & -0.066 $\pm$ 0.040 & 4.0 & -0.039 $\pm$ 0.037 & 2.3 \\
-    0.65 - 1.00 & -0.072 $\pm$ 0.073 & 4.4 & ~0.033 $\pm$ 0.061 & 3.7
+    0.65 - 1.00 & -0.072 $\pm$ 0.073 & 4.4 & ~0.033 $\pm$ 0.061 & 3.7 \\
+    \hline
   \end{tabular}
   \caption{Systematic uncertainty on $A_{LL}$ due to residual transverse beam polarization in the 2006 RHIC run.  The uncertainties are obtained using the weighted average scaling factor discussed in Table~\ref{tab:pol-vectors}}
   \label{tab:syst-pol-2006}
