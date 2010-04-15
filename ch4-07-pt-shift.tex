@@ -1,0 +1,29 @@
+\subsection{Jet Transverse Momentum Shift}
+
+The asymmetries calculated using the 2006 RHIC data are plotted against the ratio of the charged pion \(p_{T}\) and the ``true'' \(p_{T}\) of the away-side jet, which incorporates a number of corrections to the actual measured value.  Various factors bias the measured jet momentum:
+%
+\begin{itemize}
+  \item pileup TPC tracks in the jet cone radius
+  \item finite energy resolution convoluted with a steeply failing \(p_T\) spectrum
+  \item fragmentating hadrons falling outside the cone radius
+  \item underlying event interactions depositing energy in the cone radius
+\end{itemize}
+%
+The first two items are detector effects which can be corrected, while the latter two involve an interaction between the reconstruction algorithm and the physics that is best accounted for using a systematic uncertainty.
+
+TPC pileup turns out to have a relatively small effect on the jet momentum in the 2006 run.  An event-mixing analysis using zerobias data concluded that pileup adds an average of 50 MeV to each jet.  The bin migration caused by the $\sim$ 25\% energy resolution results in a much larger \(p_T\) bias.  This effect is investigated by running the jet reconstruction algorithm on final-state particles in the Pythia record to generate a ``particle'' jet and comparing the \(p_{T}\) of that jet with the \(p_{T}\) of the ``detector'' jet formed from the tracks and tower of the full detector simulation.  The size of the average shift from measured jet \(p_T\) to particle jet \(p_T\) s a function of measured \(p_T\) shown in Figure~\ref{} and can be parameterized as
+%
+\begin{equation}
+  p_{T,true} = 1.538 + 0.8439*p_{T,meas} - 0.001691*p_{T,meas}^2.
+\end{equation}
+
+Finally, out-of-cone hadronization and underlying event interactions bias the measured jet energy in different ways.  The hadronization effect is expected to be subprocess-dependent, since quark jets typically have a harder fragmentation profile than gluon jets, while the underlying event effect is isotropic in \(\eta \times \phi\) space and largely independent of jet \(p_T\).
+
+
+The uncertainty on the magnitude of the shift is shown in Figure~\ref{fig:jet-pt-shift-uncertainty}.  This uncertainty arises from limited statistics in the Monte Carlo sample, from uncertainties in the jet energy scale due to possible inaccuracies in the calibration of the TPC and EMCs, and from 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/jet-pt-shift-uncertainty}
+  \caption{$1 \sigma$ uncertainty band on the size of the correction from measured jet $p_T$ to particle jet $p_T$.}
+  \label{fig:jet-pt-shift-uncertainty}
+\end{figure}
