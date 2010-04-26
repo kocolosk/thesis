@@ -73,16 +73,18 @@ pseudorapidity acceptance of the partially installed BEMC.
 \begin{table}
   \begin{center}
     % \begin{ruledtabular}
-      \begin{tabular}{c|c|c}
-      Parameter & Value & Explanation\\
-      \hline \hline
-      $r_{cone}$  &   0.4 (2005), 0.7 (2006) & clustering radius \\ \hline
-      $p_{T}^{seed}$  &   0.5 GeV/$c$ & seed threshold \\ \hline
-      $f_{split-merge}$  &  0.5  & split/merge criterion \\ \hline
-      $\epsilon$  &  0.025  & clustering convergence condition \\
+      \begin{tabular}{|c|c|c|}
+        \hline
+        Parameter & Value \\
+        \hline
+        cone radius  &   0.4 (2005), 0.7 (2006) \\
+        seed $p_{T}$ threshold  &   0.5 GeV/$c$ \\
+        $f_{split-merge}$  &  0.5  \\
+        clustering convergence distance $\epsilon$  &  0.025  \\
+        \hline
       \end{tabular}
     % \end{ruledtabular}    
   \end{center}
-  \caption{Control parameters used in midpoint-cone clustering.}
+  \caption{Control parameters used in midpoint-cone clustering and described in detail in the text.}
   \label{tbl:jetfinding-parameters}
 \end{table}

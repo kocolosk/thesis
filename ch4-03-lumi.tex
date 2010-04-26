@@ -53,7 +53,7 @@ crossings determined to be in a \(+-\) or \(-+\) spin configuration.
 
 The statistical uncertainties on $A_{LL}$ assume perfect knowledge of the
 relative luminosity of the different spin states. That simplification is
-addressed via the systematic uncertainty evaluations described below.
+addressed via the systematic uncertainty evaluation described below.
 
 \subsection{Uncertainty Evaluation Using the ZDCs}
 
@@ -78,7 +78,7 @@ see Figure \ref{fig:zdctobbc6170012zoom}.
 
 \begin{figure}
   \includegraphics[width=1.0\textwidth]{figures/ZDCtoBBC_r7138003}
-  \caption{Ratio of ZDC and BBC coincidences versus bunch crossing.  The ratio is larger in bunch crossings immediately following abort gaps.}
+  \caption{Ratio of uncorrected ZDC and BBC coincidences versus bunch crossing.  The ratio is larger in bunch crossings immediately following abort gaps.}
   \label{fig:zdctobbc6170012zoom}
 \end{figure}
 
@@ -150,15 +150,13 @@ killer bit correction on the coincidence distributions is shown in Figure
 % the cut on |F*(S-1)| < 0.002 is strictly a 2005 thing, in 2006 the ZDC coincidences are actually renormalized! Uber-sketchy if you ask me.
 
 The second problem in need of correction has come to be known as the
-``even-odd'' effect. It turns out that the ZDC coincidence rates are often
+``even-odd'' effect.  The ZDC coincidence rates are often
 different for even-numbered and odd-numbered bunch crossings, due to
 oscillations in the electronics pedestals in specific ADC channels of the CDB
 boards used to read out the ZDCs. This oscillation can introduce a false
 asymmetry if it aligns coherently with a particular spin pattern. For instance,
 in Figure \ref{fig:c7308} the ZDC coincidence rates are always higher when the
-spin of the blue beam is down. Figure \ref{fig:fevfod} shows the time dependence
-of this even-odd oscillation in the 2005 run, with the colors now representing
-individual fills. To quantify the bias this introduces on $A_{LL}$, we can
+spin of the blue beam is down.  To quantify the bias this introduces on $A_{LL}$, we can
 define the fractional overlap between the even-odd ZDC oscillation and relevant
 portion of the spin pattern for $A_{LL}$ using a 120 element vector $|EO\rangle
 = |+1,-1,+1,-1,...\rangle$ and another 120 element vector $|LL\rangle$ whose
@@ -166,11 +164,11 @@ elements are 1 if the bunch crossing is UU or DD, -1 if UD or DU, and 0
 otherwise. The inner product of these vectors measures the susceptibility of
 $A_{LL}$ for that spin pattern to any even-odd oscillation.
 
-\begin{figure}
-  \includegraphics[width=1.0\textwidth]{figures/fevfod}
-  \caption{Magnitude of even-odd rate asymmetry versus time in the 2005 RHIC run.}
-  \label{fig:fevfod}
-\end{figure}
+% \begin{figure}
+%   \includegraphics[width=1.0\textwidth]{figures/fevfod}
+%   \caption{Magnitude of even-odd rate asymmetry versus time in the 2005 RHIC run.}
+%   \label{fig:fevfod}
+% \end{figure}
 
 It turns out that $A_{LL}$ is less biased by the even-odd rate oscillation in
 the ZDC than, say, the blue beam single-spin asymmetry. Figure \ref{fig:cll}
