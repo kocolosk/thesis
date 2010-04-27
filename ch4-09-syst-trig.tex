@@ -1,12 +1,12 @@
 \subsection{Trigger Bias}
 
-% intro paragraph describing common sources of trigger and reco bias?
+STAR's BEMC jet patch trigger preferentially selects events where one of the jets is located at mid-rapidity and hadronizes with a strong electromagnetic component.  This preference indirectly biases the triggered sample toward events containing a quark jet, since quark jets have a harder fragmentation profile than gluon jets.  In addition, the jet that fires the trigger is unlikely to contain a leading charged pion.  The fragmentation bias in the trigger jet is a primary reason that our analysis of the 2006 data is restricted to pions opposite the trigger jet in azimuth.
 
-This source of systematic uncertainty is evaluated using a leading-order Monte
-Carlo simulation of \(A_{LL}\) known as the Method of Asymmetry Weights. Pythia
-supplies the kinematics and hard scattering subprocess of each simulated event,
-which are sufficient to determine the partonic \(a_{LL}\) (calculated at NLO in
-\cite{}). An ``asymmetry weight'' for the event is then constructed by
+The various biases introduced by the trigger are evaluated using a leading-order
+Monte Carlo simulation of \(A_{LL}\) known as the Method of Asymmetry Weights.
+Pythia supplies the kinematics and hard scattering subprocess of each simulated
+event, which are sufficient to determine the partonic \(a_{LL}\) (calculated at
+NLO in \cite{}). An ``asymmetry weight'' for the event is then constructed by
 statistically sampling parton distribution functions:
 %
 \begin{equation}
@@ -15,11 +15,13 @@ statistically sampling parton distribution functions:
 %
 and one arrives at a Monte Carlo \(A_{LL}\) by simply taking the ratio of
 asymmetry-weighted and unweighted distributions. The difference between the
-``true'' \(A_{LL}\) for all Pythia events and the ``reconstructed'' \(A_{LL}\)
-for events that satisfy a simulated trigger condition is used to assign the
-systematic uncertainty.
+\(A_{LL}\) for all Pythia events and the \(A_{LL}\) for reconstructed events
+that satisfy a simulated trigger condition is used to assign the systematic
+uncertainty.
 
-This procedure requires that the Monte Carlo generator accurately reproduces the real event kinematics. Unfortunately, the fragmentation tune in Pythia 6.4 is not quite up to the task for STAR. Figure~\ref{fig:subprocess-fractions} is a comparison of the subprocess contributions to charged pion production reported by Pythia with the results of NLO pQCD calculations incorporating Kretzer and DSS fragmentation functions. The DSS set is known to better describe RHIC kinematics, but in Figure~\ref{fig:subprocess-fractions} it's clear that Pythia agrees much better with Kretzer.
+\subsubsection{Monte Carlo Fragmentation Modeling}
+
+The procedure described above requires that the Monte Carlo generator accurately reproduces the real event kinematics. Unfortunately, the fragmentation tune in Pythia~6 is not quite up to the task for STAR. Figure~\ref{fig:subprocess-fractions} is a comparison of the subprocess contributions to charged pion production reported by Pythia with the results of NLO pQCD calculations incorporating Kretzer and DSS fragmentation functions. The DSS set is known to better describe RHIC kinematics, but in Figure~\ref{fig:subprocess-fractions} it's clear that Pythia agrees much better with the Kretzer set.
 
 \begin{figure}
   \subfloat[Kretzer]{
@@ -67,13 +69,15 @@ simulations to generate DSS-like fragmentation. The effect of this reweighting
 is shown in Figure \ref{fig:compare-mcasym-nlo}. The filled markers show
 markedly better agreement with the NLO pQCD calculations than the open markers,
 particularly in scenarios such as GRSV-MIN where the difference in $A_{LL}$
-between gg and qg subprocesses is large. The agreement is still not perfect; one
-might speculate that Pythia gives too much weight to favored quark
+between \(gg\) and \(qg\) subprocesses is large. The agreement is still not
+perfect; one might speculate that Pythia gives too much weight to favored quark
 fragmentation, since at high $p_{T}$ the $\pi^{-}$ asymmetries are too small
 (indicating a relatively large d quark contribution) and the $\pi^{+}$
 asymmetries are too large (consistent with a large u quark contribution).
 However, as the trigger and reconstruction are not expected to be quark flavor
 dependent we have decided to press forward with these simulations.
+
+\subsubsection{2005 Bias Calculations}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figures/compare-mcasym-nlo}
@@ -98,10 +102,13 @@ difference in central values and the uncertainty on the ``trigger+reco'' sample.
 The size of the systematic obviously depends on the polarized gluon
 distributions that are included in the analysis. Previous measurements have
 excluded the maximal polarization scenarios as well as scenarios with the
-functional form of the GRSV set and integral gluon polarizations larger than
-STD. As a result, we use an envelope defined by the GRSV M105 and STD
-scenarios. The results of this analysis are shown in Table
-\ref{tbl:trig-reco-bias}.
+functional form of the GRSV set and integral gluon polarizations larger than 0.3
+at \(Q^2 = 1 GeV^2\). As a result, we use an envelope defined by the GRSV M030
+and P030 scenarios. The results of this analysis for the 2005 dataset are shown
+in Table \ref{tbl:trig-reco-bias}.
+
+% TODO recalculate bias systematic using M030 - P030 scenarios
+% TODO better-looking plots for asymmetry difference and uncertainty
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figures/mcasym_run5_diff_rescaled}
@@ -122,21 +129,68 @@ scenarios. The results of this analysis are shown in Table
     \begin{center}
         \begin{tabular}{c|c|c}
         \hline
-        $p_{T}$ bin & $\pi^{-}$ uncertainty & $\pi^{+}$ uncertainty\\
+        $p_{T}$ & $\pi^{-}$ $\delta A_{LL}$ & $\pi^{+}$ $\delta A_{LL}$\\
         \hline
-        \hline
-        [2.00 - 3.18] & -0.0059 +0.0027 & -0.0061 +0.0061\\
-        \hline
-        [3.18 - 4.56] & -0.0083 +0.0072 & -0.0128 +0.0066\\
-        \hline
-        [4.56 - 6.32] & -0.0093 +0.0034 & -0.0176 +0.0101\\
-        \hline
-        [6.32 - 8.80] & -0.0072 +0.0036 & -0.0209 +0.0186\\
-        \hline
-        [8.80 - 12.84] & -0.0048 +0.0057 & -0.0152 +0.0062\\
+        2.00 - 3.18 & -0.0059 +0.0027 & -0.0061 +0.0061\\
+        3.18 - 4.56 & -0.0083 +0.0072 & -0.0128 +0.0066\\
+        4.56 - 6.32 & -0.0093 +0.0034 & -0.0176 +0.0101\\
+        6.32 - 8.80 & -0.0072 +0.0036 & -0.0209 +0.0186\\
+        8.80 - 12.84 & -0.0048 +0.0057 & -0.0152 +0.0062\\
     \hline
     \end{tabular}
     \end{center}
-    \caption{Trigger and Reconstruction Bias Uncertainties}
+    \caption{2005 Trigger and Reconstruction Bias Uncertainties}
+    \label{tbl:trig-reco-bias}
+\end{table}
+
+\subsubsection{2006 Bias Calculations}
+
+An additional complication for the 2006 data analysis is shown in Figure~\ref{fig:mean-pt-simu}.  The JP trigger efficiency is a sharply-rising function of jet \(p_T\); as a result, the \(\langle p_T \rangle\) for pions and especially for jets in a given \(z\) bin is significantly larger in the triggered sample compared to the minimum-bias sample.  In effect, we are under-sampling the low \(x\) regime in each \(z\) bin.  The bias calculated by a na\"ive application of the Method of Asymmetry Weights to this measurement would be unacceptably large.  Instead, we choose to publish the trigger efficiency as part of the measurement, and to rescale the minimum-bias Monte Carlo sample by that trigger efficiency.  A comparison of the simulated \(A_{LL}\) in the triggered and rescaled minimum-bias samples allows an estimate of the measurement error introduced by the trigger's subprocess bias.
+
+\begin{figure}
+  \includegraphics[width=1.0\textwidth]{figures/meanpt-by-trigger}
+  \caption{Comparison of the $\langle p_T \rangle$ for MB and JP triggers ni the 2006 Monte Carlo.  Filled markers plot jet $\langle p_T \rangle$ and open markers charged pion $\langle p_T \rangle$. The JP triggered data sample has a dramatically larger jet $\langle p_T \rangle$ in each $z$ bin, which biases $A_{LL}$ towards larger values in the GRSV framework.}
+  \label{fig:mean-pt-simu}
+\end{figure}
+
+Figure~\ref{fig:trigger-efficiency} plots the ratio of jet yields in the MB Monte Carlo sample and the sample that passes a simulated JP trigger.  The trigger efficiency as a function of jet \(p_T\) is well described by a cubic polynomial:
+%
+\begin{equation}
+  \epsilon_{trigger} = 1.149 - 0.2655 * p_T   + 0.01857 * p_T^2 - 0.0003445 * p_T^3.
+  \label{eqn:trigger-efficiency}
+\end{equation}
+%
+Finally, Figure~\ref{fig:trig-bias-2006} plots the difference between the trigger sample \(A_{LL}\) and the \(A_{LL}\) calculated from the rescaled MB sample for an envelope of GRSV parameterizations with integral gluon polarization less than 0.3 at \(Q^2 = 1 GeV^2\).  A systematic uncertainty on our measured \(A_{LL}\) is assigned by taking the maximum asymmetry difference in each bin, or the uncertainty on the triggered \(A_{LL}\) if all asymmetry differences are consistent with zero.
+
+% TODO 2006 mcasym numbers for M030-P030
+% TODO reweight 2006 Monte Carlo by DSS/Kretzer ratio
+
+\begin{figure}
+  \includegraphics[width=1.0\textwidth]{figures/trigger-efficiency}
+  \caption{A parameterization of the BJP1 trigger efficiency as a function of corrected jet $p_T$ established from the 2006 Monte Carlo.  This parameterization is used to factor out the trigger efficiency from the Method of Asymmetry Weights $A_{LL}$ studies, allowing those studies to focus on the subprocess bias inherent in the trigger.}
+  \label{fig:trigger-efficiency}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/placeholder}
+  \caption{Comparison of simulated asymmetries for triggered events and minimum-bias events which have been rescaled to reflect the average trigger efficiency as a function of jet $p_T$. The resulting difference is a measure of the bias introduced by the subprocess-dependence in the trigger.}
+  \label{fig:trig-bias-2006}
+\end{figure}
+
+\begin{table}[ht]
+    \begin{center}
+        \begin{tabular}{c|c|c}
+        \hline
+        $z$ & $\pi^{-}$ $\delta A_{LL}$ & $\pi^{+}$ $\delta A_{LL}$\\
+        \hline
+        0.20 - 0.30 & 0.0 &  0.0 \\
+        0.30 - 0.45 & 0.0 &  0.0 \\
+        0.45 - 0.65 & 0.0 &  0.0 \\
+        0.65 - 1.00 & 0.0 &  0.0 \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \caption{2006 Trigger and Reconstruction Bias Uncertainties}
     \label{tbl:trig-reco-bias}
 \end{table}
