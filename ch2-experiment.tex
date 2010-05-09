@@ -50,8 +50,7 @@ Gradient Synchrotron (AGS), which accelerates them to the RHIC injection
 energy of 25 GeV. RHIC propels the $\sim \mathrm{2x10^{11}}$ protons remaining
 in each bunch to the desired collision energy, which can range from 30 GeV to
 250 GeV. This work analyzes data collected with a beam energy of 100 GeV. More
-details of the RHIC accelerator complex are available in references
-\cite{Harrison:2003sb, Hahn:2003sc, Alekseev:2003sk}.
+details of the RHIC accelerator complex are available in \cite{Harrison:2003sb}.
 
 \subsection{Spin Dynamics and Siberian Snakes}
 
@@ -106,7 +105,7 @@ jump effectively result in $|\epsilon|^2 \ll \alpha$ and thus preserve the
 polarization through the resonance. At high energies, the number and strength
 of the resonances encountered make these traditional techniques impractical.
 Instead, the RHIC rings employ ``Siberian Snake'' magnets
-\cite{Derbenev:1978hv} which generate a 180\degree spin rotation about a
+\cite{Derbenev:1978hv} which generate a \(180^\circ\) spin rotation about a
 horizontal axis when the beam passes through them. In effect, the Siberian
 Snakes ensure that the spin tune is an energy-independent half-integer, thus
 avoiding all imperfection resonances as well as intrinsic resonances with an
@@ -193,7 +192,7 @@ read them out, while the BEMC, EEMC and TPC are used to reconstruct the final
 state of the event offline. The BBCs and ZDCs also allow a bunch
 crossing-dependent measure of the beam luminosities, which is essential to
 normalize spin-dependent asymmetries. These and other subsystems are described
-in greater detail in \cite{RHIC-Special-Issue}.
+in greater detail in \cite{Harrison:2003sb}.
 
 \begin{figure}
   \includegraphics[width=1.0\textwidth]{figures/star-schematic-new}
@@ -212,8 +211,9 @@ BEMC are fast detectors that sample each bunch crossing at the STAR IR, and
 can thus be used for efficient selection of high $p_T$ events. A typical
 trigger mix consists of $\sim$10-20 separate triggers running in parallel.
 Significant improvements to the STAR data acquisition system (DAQ) beyond
-design specifications have increased the rate of event recording to typical
-values of 30-50 Hz, with a dead-time fraction of $\sim$50\%.
+design specifications enabled the experiment to record events in the 2005 and
+2006 experimental runs at a rate of 30-50 Hz with a dead-time fraction of
+$\sim$50\%.
 
 The L0 trigger operates on coarse-granularity data from fast detectors and
 builds a decision tree capable of completing its analysis in time with the 119
@@ -246,7 +246,7 @@ Thresholds are set well below the signal deposited by a single ionizing
 particle in a tile, and a bunch crossing is recorded as having a hit based on
 the relative timing between the first signal from any of the small tiles on
 one side with the first signal from any of the small tiles on the other. The
-timing resolution is $\sim$1~ns, sufficient to separate beam backgrounds which
+timing resolution is $\sim$2~ns, sufficient to separate beam backgrounds which
 should hit the two counters in succession vs. particles from a collision which
 should result in both counters being struck simultaneously. A timing cut 8~ns
 wide selects only coincidences with collision timing, and individual scalers
@@ -263,7 +263,7 @@ BBCs is calibrated by measuring the size of the beams and the number of
 colliding protons. The coincident cross section was found to be 26.1 $\pm$
 1.8(stat) $\pm$ 1.8(syst)~mb, representing $87\pm8\%$ of the non-singly
 diffractive pp cross section \cite{Adams:2003kv}. This translates into a
-typical BBC coincidence rate for 2005(2006) data of $\sim$180(??)~kHz.
+typical BBC coincidence rate for 2005 (2006) data of $\sim$180 ($\sim$500)~kHz.
 
 \subsection{Zero Degree Calorimeters\label{sec:zdc}}
 
@@ -346,16 +346,16 @@ detector are held at ground potential and the central cathode membrane at
 a uniform electric field of $\approx 135$ V/cm. The TPC sits inside a solenoid
 with a field strength of 0.5 Tesla.
 
-Charged particles ionize the P10 gas as they traverse the volume of the TPC,
-producing secondary electrons that drift to the nearest end cap of the
-detector. The $z$ coordinate of each point along the track is calculated by
-measuring the time required for the electrons to reach the end cap and
-dividing by the drift velocity. The drift velocity varies with electric field
-strength and with the temperature, pressure, and composition of the gas, so
-measurements of it are performed every few hours using the TPC laser system
-\cite{Abele:2003aa}. Radial laser beams at known positions along the length of
-the TPC ionize trace organic substances in the P10 gas; the time difference
-between the arrival of electrons liberated by lasers at two different
+Charged particles ionize the P10 gas (a mix of 90\% argon and 10\% methane) as
+they traverse the volume of the TPC, producing secondary electrons that drift to
+the nearest end cap of the detector. The $z$ coordinate of each point along the
+track is calculated by measuring the time required for the electrons to reach
+the end cap and dividing by the drift velocity. The drift velocity varies with
+electric field strength and with the temperature, pressure, and composition of
+the gas, so measurements of it are performed every few hours using the TPC laser
+system \cite{Abele:2003aa}. Radial laser beams at known positions along the
+length of the TPC ionize trace organic substances in the P10 gas; the time
+difference between the arrival of electrons liberated by lasers at two different
 positions allows a calculation of the drift velocity.
 
 % could say a little more about how electron drift time is measured ... e.g. time buckets for readout pads
