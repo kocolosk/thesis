@@ -12,8 +12,7 @@ opposite the trigger jet in azimuth.
 The various biases introduced by the trigger are evaluated using a leading-order
 Monte Carlo simulation of \(A_{LL}\) known as the Method of Asymmetry Weights.
 Pythia supplies the kinematics and hard scattering subprocess of each simulated
-event, which are sufficient to determine the partonic \(a_{LL}\) (calculated at
-NLO in \cite{}). An ``asymmetry weight'' for the event is then constructed by
+event, which are sufficient to determine the partonic \(a_{LL}\). An ``asymmetry weight'' for the event is then constructed by
 statistically sampling parton distribution functions:
 %
 \begin{equation}
@@ -105,39 +104,24 @@ dependent we have decided to press forward with these simulations.
   \label{fig:compare-mcasym-nlo}
 \end{figure}
 
-Figure \ref{fig:mcasym-diff} examines the difference between asymmetries for a
-``true'' sample using untriggered events and pions pulled straight from the
+The size of the trigger bias systematic computed in this manner obviously
+depends on the assumptions of the polarized gluon distribution that are included
+in the analysis. Previous measurements have excluded the maximal polarization
+scenarios as well as scenarios with the functional form of the GRSV set and
+integral gluon polarizations larger than 0.3 at \(Q^2 = 1 GeV^2\). As a result,
+we use an envelope defined by the GRSV M030 and P030 scenarios.
+
+Figure \ref{fig:mcasym-2005} examines the difference between asymmetries for a
+``true'' sample using minimum-bias events and pions pulled straight from the
 Pythia record, and a ``trigger+reco'' sample where the events must satisfy the
 JP2 trigger simulator and the pion kinematics are obtained from TPC track
-reconstruction. In some cases, the difference between the two samples is smaller
-than the uncertainty on the ``trigger+reco'' sample (see Figure
-\ref{fig:mcasym-sigma}). The systematic is assigned as the larger of the
-difference in central values and the uncertainty on the ``trigger+reco'' sample.
-
-The size of the systematic obviously depends on the polarized gluon
-distributions that are included in the analysis. Previous measurements have
-excluded the maximal polarization scenarios as well as scenarios with the
-functional form of the GRSV set and integral gluon polarizations larger than 0.3
-at \(Q^2 = 1 GeV^2\). As a result, we use an envelope defined by the GRSV M030
-and P030 scenarios. The results of this analysis for the 2005 dataset are shown
-in Table \ref{tbl:trig-reco-bias}.
-
-% TODO recalculate bias systematic using M030 - P030 scenarios
-% TODO better-looking plots for asymmetry difference and uncertainty
+reconstruction. Both asymmetries are computed using the subprocess-reweighted
+Monte Carlo samples described above.  The square braces indicate the maximum asymmetry difference for the envelope of polarized gluon distributions with \(\Delta G < 0.3\).  In some cases, the uncertainty on the asymmetry difference due to finite Monte Carlo statistics is larger than the difference itself;  when this occurs, the statistical uncertainty is used to assign the systematic.  The final uncertainties for this source of bias can be found in Table \ref{tbl:trig-reco-bias}.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{figures/mcasym_run5_diff_rescaled}
-  \caption{Difference between true and reconstructed Monte Carlo
-  asymmetries after fragmentation reweighting.  The cyan and magenta curves represent polarized gluon distributions with the functional form of GRSV STD but with varying integral values for $\Delta G$.}
-  \label{fig:mcasym-diff}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figures/mcasym_run5_sigma_rescaled}
-  \caption{Uncertainty on reconstructed Monte Carlo asymmetries. If the
-  uncertainty is larger than the difference between true and reconstructed
-  asymmetries we use this to assign the systematic instead.}
-  \label{fig:mcasym-sigma}
+    \includegraphics[width=\textwidth]{figures/syst_mcasym_2005}
+    \caption{Asymmetry differences used to compute the trigger bias systematic for the 2005 analysis. The square braces represent the maximum asymmetry difference between ``true'' and ``trigger+reco'' Monte Carlo samples assuming a variety of polarized gluon distributions with $\Delta G < 0.3$.  The gray bars represent the maximum statistical uncertainty on the asymmetry difference in each bin.}
+    \label{fig:mcasym-2005}
 \end{figure}
 
 \begin{table}[ht]
@@ -146,11 +130,11 @@ in Table \ref{tbl:trig-reco-bias}.
         \hline
         $p_{T}$ & $\pi^{-}$ $\delta A_{LL}$ & $\pi^{+}$ $\delta A_{LL}$\\
         \hline
-        2.00 - 3.18 & -0.0059 +0.0027 & -0.0061 +0.0061\\
-        3.18 - 4.56 & -0.0083 +0.0072 & -0.0128 +0.0066\\
-        4.56 - 6.32 & -0.0093 +0.0034 & -0.0176 +0.0101\\
-        6.32 - 8.80 & -0.0072 +0.0036 & -0.0209 +0.0186\\
-        8.80 - 12.84 & -0.0048 +0.0057 & -0.0152 +0.0062\\
+        2.00 - 3.18  & -0.0076 +0.0015 & -0.0021 +0.0015\\
+        3.18 - 4.56  & -0.0101 +0.0023 & -0.0149 +0.0021\\
+        4.56 - 6.32  & -0.0105 +0.0024 & -0.0202 +0.0025\\
+        6.32 - 8.80  & -0.0097 +0.0041 & -0.0228 +0.0041\\
+        8.80 - 12.84 & -0.0070 +0.0052 & -0.0162 +0.0051\\
     \hline
     \end{tabular}
     \end{center}
@@ -198,7 +182,6 @@ each bin, or the uncertainty on the triggered \(A_{LL}\) if all asymmetry
 differences are consistent with zero. The final values are tabulated in
 Table~\ref{tab:trig-bias-2006}.
 
-% TODO 2006 mcasym numbers for M030-P030
 % TODO reweight 2006 Monte Carlo by DSS/Kretzer ratio
 
 \begin{figure}
@@ -208,9 +191,15 @@ Table~\ref{tab:trig-bias-2006}.
 \end{figure}
 
 \begin{figure}
+    \includegraphics[width=1.0\textwidth]{figures/mb_mcasym_2006}
+    \caption{Reweighted Monte Carlo asymmetries for the minimum-bias trigger.  The asymmetries defining the $\Delta G < 0.3$ envelope are used to calculate the systematic uncertainty.  Shown for comparison are the Monte Carlo asymmetries computed assuming two common polarized gluon distributions.}
+    \label{fig:mb-mcasym-2006}
+\end{figure}
+
+\begin{figure}
   \centering
-  \includegraphics[width=0.5\textwidth]{figures/placeholder}
-  \caption{Comparison of simulated asymmetries for triggered events and minimum-bias events which have been rescaled to reflect the average trigger efficiency as a function of jet $p_T$. The resulting difference is a measure of the bias introduced by the subprocess-dependence in the trigger.}
+  \includegraphics[width=\textwidth]{figures/syst_mcasym_2006}
+  \caption{Asymmetry differences used to compute the trigger bias systematic for the 2005 analysis. The square braces represent the maximum asymmetry difference between the rescaled minimum-bas sample and ``trigger+reco'' Monte Carlo samples assuming a variety of polarized gluon distributions with $\Delta G < 0.3$.  The gray bars represent the maximum statistical uncertainty on the asymmetry difference in each bin.  The resulting envelope is a measure of the bias introduced by the subprocess-dependence in the trigger in the 2006 RHIC dataset.}
   \label{fig:trig-bias-2006}
 \end{figure}
 
@@ -220,10 +209,10 @@ Table~\ref{tab:trig-bias-2006}.
         \hline
         $z$ & $\pi^{-}$ $\delta A_{LL}$ & $\pi^{+}$ $\delta A_{LL}$\\
         \hline
-        0.20 - 0.30 & 0.0 &  0.0 \\
-        0.30 - 0.45 & 0.0 &  0.0 \\
-        0.45 - 0.65 & 0.0 &  0.0 \\
-        0.65 - 1.00 & 0.0 &  0.0 \\
+        0.20 - 0.30  & -0.0052 +0.0005 & -0.0134 +0.0009 \\
+        0.30 - 0.45  & -0.0113 +0.0010 & -0.0165 +0.0023 \\
+        0.45 - 0.65  & -0.0017 +0.0017 & -0.0032 +0.0040 \\
+        0.65 - 1.00  & -0.0108 +0.0035 & -0.0076 +0.0076 \\
     \hline
     \end{tabular}
     \end{center}
