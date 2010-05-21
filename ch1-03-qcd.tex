@@ -8,12 +8,11 @@ The parton model results presented thus far assume that the photon scatters off
 a free quark, a simplification which completely neglects the strong interaction.
 In reality, quarks in the proton are tightly bound, constantly radiating and
 reabsorbing gluons. Quantum chromodynamics (QCD) enhances the parton model with
-interaction-dependent modifications of the simple parton model formulae. Two
-effects are of particular interest in this work. The first is a violation of
-parton density scaling; the distribution functions acquire a logarithmic
-dependence on \(Q^2\) which is calculable in perturbative QCD. The second is an
-anomalous gluonic contribution to \(a_0\), which at one time was thought to
-offer a resolution to the ``spin crisis''. % TODO caveat about glossing over technical details, plus a citation of some review paper?
+interaction-dependent modifications of the simple parton model formulae. These
+improvements do not alter the fundamental conclusions regarding the spin
+composition of the proton established using the parton model, but they are
+useful for a proper discussion of current experimental efforts to understand the
+polarized gluon distribution.
 
 \subsection{Factorization and Scaling Violations}
 
@@ -66,46 +65,24 @@ section is calculable using perturbative QCD when the \(Q^2\) of the interaction
 is large, while the PDFs and FFs must be parameterized from experimental
 results. Fortunately, those distribution functions are \textit{universal}; they
 can be measured in any process (commonly \(e^+e^-\) collisions) and then applied
-in the calculation of any other cross section. % TODO burton has a statement about the applicability of factorization in DIS and pp->jets with 2 references here
-
-\subsection{Anomalous gluonic contribution to $\Gamma_1$}
-
-A particularly interesting QCD correction to DIS is shown in Figure
-\ref{fig:box-diagram}. This correction involves the gluonic version of the Adler
-\cite{Adler:1969gk} and Bell and Jackiw \cite{Bell:1969ts} anomalous triangle
-diagram, and results in a gluonic contribution to the flavor singlet matrix
-element\footnote{This result is only valid in the \(AB\) and \(JET\)
-renormalization schemes. In the \(\overline{MS}\) scheme, where \(\Delta
-\Sigma\) itself varies with \(Q^2\), the gluonic contribution to \(a_0\) is
-zero.}:
-%
-\begin{equation}
-  a_0(Q^2) = \Delta \Sigma_q - 3\frac{\alpha_s(Q^2)}{2\pi} \Delta G(Q^2)
-  \label{eqn:qcd-a0}
-\end{equation}
-%
-This result invalidates the simple parton model formula \ref{eqn:su3-dis} for
-\(a_0\) in terms of the quark spins. In the QCD enhanced parton model, a small
-measured value of \(\Gamma_1^p\) (and thus a small \(a_0\)) does not necessarily
-imply small quark polarization in the proton.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.5\textwidth]{figures/box-diagram}
-  \caption{QCD diagram leading to the anomalous gluon contribution}
-  \label{fig:box-diagram}
-\end{figure}
+in the calculation of any other cross section. 
 
 \subsection{Spin Sum Rules}
 
-The formulation in \ref{eqn:qcd-a0} has the attractive property that \(\Delta \Sigma_q\) is independent of \(Q^2\) and can be thought of as the quark helicity contribution even in the static (\(Q^2 \rightarrow 0\)) limit. Working in the light-cone gauge, one can write a sum rule for the proton spin which takes the form \cite{Hagler:1998kg, Harindranath:1998ve, Bashinsky:1998if}
+One can write a classic sum rule for the proton spin which takes the form
+\cite{Hagler:1998kg, Harindranath:1998ve, Bashinsky:1998if}
 %
 \begin{equation}
   \frac{1}{2} = \frac{1}{2}\Delta \Sigma_q + \Delta G + L_q + L_g.
   \label{eqn:jaffe-sum-rule}
 \end{equation}
 %
-Unfortunately, the last two terms are not experimentally accessible.  Lattice QCD can measure angular momentum contributions to the proton spin, but it does so in a different gauge and the sum rule \ref{eqn:jaffe-sum-rule} is not gauge invariant.
+Unfortunately, the last two terms are not experimentally accessible. Lattice QCD
+can measure angular momentum contributions to the proton spin, but the angular
+momentum operators in the sum rule are non-local in a generic gauge. It is only
+in the light-cone gauge, inaccessible to the lattice, where the terms in the sum
+rule can be cleanly interpreted as individual parton helicity and angular
+momentum contributions.
 
 There exists an alternative sum rule \cite{Jaffe1990509, Ji:1996ek}
 %

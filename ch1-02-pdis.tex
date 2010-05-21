@@ -9,8 +9,8 @@ asymmetries of interest are
 % Stiegler 2.3 is useful here
 
 \begin{equation}
-  A_{\parallel} = \frac{\sigma^{\rightarrow \Leftarrow} - \sigma^{\rightarrow \Rightarrow}}{\sigma^{\rightarrow \Leftarrow} + \sigma^{\rightarrow \Rightarrow}}, ~~~~~~~
-  A_{\perp} = \frac{\sigma^{\rightarrow \Uparrow} - \sigma^{\rightarrow \Downarrow}}{\sigma^{\rightarrow \Uparrow} + \sigma^{\rightarrow \Downarrow}}
+  A_{\parallel} = \frac{\sigma^{\uparrow \Downarrow} - \sigma^{\uparrow \Uparrow}}{\sigma^{\uparrow \Downarrow} + \sigma^{\uparrow \Uparrow}}, ~~~~~~~
+  A_{\perp} = \frac{\sigma^{\uparrow \perp} - \sigma^{\uparrow \top}}{\sigma^{\uparrow \perp} + \sigma^{\uparrow \top}}
 \end{equation}
 
 Spin-dependent cross sections can be calculated by contracting the elastic
@@ -81,24 +81,19 @@ obtained from the EMC extraction is incompatible with the prediction from Ellis
 and Jaffe. Solving for the polarized parton densities using this result and the
 beta decay measurements in \ref{eqn:beta-decay}, one finds that the strange
 quarks possess a significant polarization antiparallel to the proton, and that
-the quark spin contribution to the spin of the proton is only twelve percent:
-%
-% TODO these numbers come directly from EMC; should do it myself with my beta decay values
-\begin{eqnarray}
-  \langle S_z \rangle_{u} &=& \frac{1}{2}\left(\Delta u + \Delta \bar{u}\right) = 0.391 \pm 0.016 \pm 0.023, \nonumber \\
-  \langle S_z \rangle_{d} &=& \frac{1}{2}\left(\Delta d + \Delta \bar{d}\right) = -0.236 \pm 0.016 \pm 0.023, \nonumber \\
-  \langle S_z \rangle_{s} &=& \frac{1}{2}\left(\Delta s + \Delta \bar{s}\right) = -0.095 \pm 0.016 \pm 0.023, \nonumber \\
-  \langle S_z \rangle_{quarks} &=& \frac{a_0}{2} = 0.060 \pm 0.047 \pm 0.069.
-\end{eqnarray}
-%
+the quark spin contribution to the spin of the proton is much smaller than
+expected.
+
 The EMC result sparked what was once termed a ``spin crisis'' in particle
 physics. Successive polarized DIS experiments at CERN, SLAC, and DESY confirmed
 and refined the EMC measurement of \(g_1^p\) with improved precision over a
 wider kinematic range \cite{Adams:1994zd}, and measured both \(g_1^n\)
 \cite{Anthony:1993uf} and \(g_1^d\) \cite{Adeva:1993km} which allowed a
-verification of the critical Bjorken sum rule. Over the years the precise value
-of \(\Gamma_1^p\) has shifted somewhat, but the implication remains the same ---
-the na\"ive parton model cannot explain how the proton gets its spin.
+verification of the critical Bjorken sum rule. A recent global analysis
+\cite{Leader:2006xc} of these data determined the integral quark polarization to
+be \(\Delta \Sigma = 0.24 \pm 0.04\). The conclusion drawn from the EMC data
+still holds true --- the quark helicities alone cannot explain how the proton
+gets its spin.
 
 \begin{figure}
   \includegraphics[width=1.0\textwidth]{figures/emc-g1p}
